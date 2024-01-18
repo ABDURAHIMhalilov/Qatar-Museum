@@ -1,0 +1,5 @@
+@media(max-width: 800px) {
+    .tickets-table {
+        width: 100% !important;
+    }
+}
