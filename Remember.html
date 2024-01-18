@@ -317,7 +317,7 @@
                         class="tickets-museum-list__heading-introduction"
                       ></div>
                     </li>
-                    <li class="tickets-list-item">
+                    <li onclick="CategoryPush(1)" class="tickets-list-item">
                       <input
                         checked=""
                         data-is-exhibition="false"
@@ -460,7 +460,7 @@
                           </div></div
                       ></label>
                     </li>
-                    <li class="tickets-list-item">
+                    <li onclick="CategoryPush(2)" class="tickets-list-item">
                       <input
                         data-is-exhibition="false"
                         id="museum-list-qosm-museum-"
@@ -585,7 +585,7 @@
                           </div></div
                       ></label>
                     </li>
-                    <li class="tickets-list-item">
+                    <li onclick="CategoryPush(3)" class="tickets-list-item">
                       <input
                         data-is-exhibition="false"
                         id="museum-list-mia-museum-"
@@ -722,7 +722,7 @@
                           </div></div
                       ></label>
                     </li>
-                    <li class="tickets-list-item">
+                    <li onclick="CategoryPush(4)" class="tickets-list-item">
                       <input
                         data-is-exhibition="false"
                         id="museum-list-mathaf-museum-plus-special-exhibitions-"
@@ -878,7 +878,7 @@
                           </div></div
                       ></label>
                     </li>
-                    <li class="tickets-list-item">
+                    <li onclick="CategoryPush(5)" class="tickets-list-item">
                       <input
                         data-is-exhibition="false"
                         id="museum-list-al-zubarah-"
@@ -1005,7 +1005,7 @@
                           </div></div
                       ></label>
                     </li>
-                    <li class="tickets-museum-list__heading">
+                    <li  class="tickets-museum-list__heading">
                       <h4 class="tickets-museum-list__heading-title">
                         Exhibitions at other venues
                       </h4>
@@ -1013,7 +1013,7 @@
                         class="tickets-museum-list__heading-introduction"
                       ></div>
                     </li>
-                    <li class="tickets-list-item tickets-list-item--exhibition">
+                    <li onclick="CategoryPush(6)" class="tickets-list-item tickets-list-item--exhibition">
                       <input
                         data-is-exhibition="true"
                         id="museum-list-flavin-judd-"
@@ -1146,7 +1146,7 @@
                           </div></div
                       ></label>
                     </li>
-                    <li class="tickets-list-item tickets-list-item--exhibition">
+                    <li onclick="CategoryPush(7)" class="tickets-list-item tickets-list-item--exhibition">
                       <input
                         data-is-exhibition="true"
                         id="museum-list-dadu-"
@@ -1653,8 +1653,8 @@
                             <td>Subtotal</td>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody id="data_map">
+                        <!-- <tr>
                             <td class="tickets-table__type">
                                 <span class="tickets-table__title-span">Adult Resident of Qatar</span>
                                 <span class="tickets-table__description-span">Ticket holders must present an accepted and valid ID for entry.</span>
@@ -1707,7 +1707,14 @@
                             <td class="tickets-table__type">
                                 <span class="tickets-table__title-span">One Pass Holder</span>
                                 <span class="tickets-table__description-span">You will need to validate your One Pass in the next step.</span>
-                                <span class="tickets-table__price-span">Free</span></td><td class="tickets-table__quantity"><input value="0"></td><td class="tickets-table__buttons"><div class="tickets-table__buttons-wrapper"><button class="tickets-table__button tickets-table__button--plus"></button><button class="tickets-table__button tickets-table__button--minus"></button></div></td><td class="tickets-table__subtotal">0</td></tr></tbody></table><div class="tickets-table__total"><div class="tickets-table__total-label">Total</div><div class="tickets-table__total-price">QAR 45</div></div></div>
+                                <span class="tickets-table__price-span">Free</span>
+                              </td>
+                              <td class="tickets-table__quantity"><input value="0"><
+                                /td><td class="tickets-table__buttons"><div class="tickets-table__buttons-wrapper"><button class="tickets-table__button tickets-table__button--plus"></button><button class="tickets-table__button tickets-table__button--minus"></button></div></td><td class="tickets-table__subtotal">0</td>
+                        </tr> -->
+                    </tbody>
+                  </table>
+                  <div class="tickets-table__total"><div class="tickets-table__total-label">Total</div><div id="price_map" class="tickets-table__total-price">0</div></div></div>
         <div class="emergency-notice" style="display: none">
           <div class="tickets-section tickets-section--default">
             <div class="tickets-section__flex-content">
