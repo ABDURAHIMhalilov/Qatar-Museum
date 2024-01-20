@@ -1254,8 +1254,15 @@
               <h4 id="nameGet"></h4>
             </div>
             <div
+            id="total_price_text"
               class="tickets-summary__content tickets-summary__content--desktop"
-            ></div>
+            >
+            </div>
+            <div
+            class="tickets-summary__total-amount tickets-summary__total-amount--desktop"
+          >
+            <h4 id="totalprice"></h4>
+          </div>
             <div class="tickets-summary__footer">
               <div class="tickets-summary__total">
                 <div class="tickets-summary__total-content">
@@ -1264,10 +1271,11 @@
                     class="tickets-summary__total-amount tickets-summary__total-amount--mobile"
                   ></div>
                 </div>
-                <a
+                <div
+                  onclick="NextStep()"
                   class="button button--primary tickets-summary__button"
-                  href="./pick-a-date.html"
-                  ><span class="button__icon button__icon--before"
+                  >
+                  <span  class="button__icon button__icon--before"
                     ><svg
                       data-direction="text-direction"
                       height="30"
@@ -1279,7 +1287,7 @@
                         d="m17 10-.9.9 3.5 3.5H9v1.2h10.6l-3.5 3.5.9.9 5-5z"
                       ></path></svg
                   ></span>
-                  <span class="button__span">Next step</span></a
+                  <span class="button__span">Next step</span></div
                 >
               </div>
             </div>
