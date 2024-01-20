@@ -343,8 +343,9 @@ function CategoryPush(id){
 
 }
 
-var JSON=[]
+var JSONdata=[]
 var ID=1
+var JSONprice=0
 
 function DataPlus(key,price,name){
   if(document.querySelectorAll(".pilusminus")[key].value>0){
@@ -356,7 +357,7 @@ function DataPlus(key,price,name){
           count:document.querySelectorAll(".pilusminus")[key].value*1+1,
           title:name,
         }
-        JSON.splice(i,1,a)
+        JSONdata.splice(i,1,a)
         ID+=1
       }
     }
@@ -367,7 +368,7 @@ function DataPlus(key,price,name){
       count:document.querySelectorAll(".pilusminus")[key].value*1+1,
       title:name,
     }
-    JSON.push(a)
+    JSONdata.push(a)
     ID+=1
   }
 
@@ -378,9 +379,10 @@ function DataPlus(key,price,name){
   for (let i = 0; i < document.querySelectorAll("#price").length; i++) {
     a+=document.querySelectorAll("#price")[i].innerHTML.slice(4)*1
   }
+  JSONprice=a
   document.querySelector("#price_map").innerHTML="QAR "+a
   document.querySelector("#totalprice").innerHTML=`Total: QAR ${a}`
-  console.log(JSON,"helo");
+  console.log(JSONdata,"helo");
 }
 function DataMinus(key,price,name){
   if(document.querySelectorAll(".pilusminus")[key].value>0){
@@ -397,10 +399,10 @@ function DataMinus(key,price,name){
             count:document.querySelectorAll(".pilusminus")[key].value*1,
             title:name,
           }
-          JSON.splice(i,1,a)
+          JSONdata.splice(i,1,a)
           ID+=1
           if(document.querySelectorAll(".pilusminus")[key].value==0){
-            JSON.splice(i,1)
+            JSONdata.splice(i,1)
             document.querySelectorAll("#total_big_text_div")[i].style="display:none;"   
           }
         }
@@ -411,6 +413,7 @@ function DataMinus(key,price,name){
     a+=document.querySelectorAll("#price")[i].innerHTML.slice(4)*1
   }
   document.querySelector("#price_map").innerHTML="QAR "+a
+  JSONprice=a
   document.querySelector("#totalprice").innerHTML=`Total: QAR ${a}`
   if(a==0){
     document.querySelector("#price_map").innerHTML=a
@@ -426,10 +429,22 @@ function NextStep(){
     }
   }
   if(a){
+    sessionStorage.setItem("data",JSON.stringify(JSONdata))
+    sessionStorage.setItem("dataprice",JSONprice)
     window.location="./pick-a-date.html"
-    localStorage.setItem("data",JSON)
   }
 }
+
+
+setTimeout(()=>{
+  if(JSON.parse(sessionStorage.getItem("data"))){
+    var a=JSON.parse(sessionStorage.getItem("data"))
+    a.map(item=>{
+       document.querySelector("#data_item_div").innerHTML+=`<div>${item.count} x ${item.title}</div>`
+       document.querySelector("#data_amout").innerHTML="Total: QAR "+sessionStorage.getItem("dataprice")
+    })
+  }
+},1000)
 
 
 

@@ -149,6 +149,23 @@
         cl.add("is-ie");
       }
     </script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+      <script>
+$(document).ready(function () {
+
+$('#datepicker').datepicker({
+  onSelect: function(dateText, inst) {
+    var selectedDate = new Date(dateText);
+    console.log(selectedDate,"hello");
+    $('#selected-date').text(selectedDate.toDateString());
+  }
+});
+
+});
+        </script>
     <div class="container container--wrapper">
       <header class="container container--header" role="banner">
         <div class="menu-bar menu-bar--minimal-language">
@@ -380,7 +397,7 @@
                           data-time-header="Choose entry time"
                           data-time-list-aria-label=""
                         >
-                          <div
+                          <!-- <div
                             class="DayPicker DayPicker_1 DayPicker__horizontal DayPicker__horizontal_2"
                             style="width: 773px"
                           >
@@ -2282,7 +2299,8 @@
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </div> -->
+                          <div id="datepicker"></div>
                           <div class="tickets-datetime-picker__timepicker">
                             <h2 class="tickets-datetime-picker__title">
                               Choose entry time
@@ -2423,6 +2441,7 @@
                     </div>
                   </div>
           </div>
+          
         <div
           class="tickets-summary tickets-summary--app"
           data-currency-label="QAR"
@@ -2440,11 +2459,17 @@
               id="tickets-summary-basket"
             ></div>
             <div
+            id="nameGet"
               class="tickets-summary__total-amount tickets-summary__total-amount--desktop"
-            ></div>
+            >Title</div>
             <div
+            id="data_item_div"
               class="tickets-summary__content tickets-summary__content--desktop"
             ></div>
+            <div
+            id="data_amout"
+            class="tickets-summary__total-amount tickets-summary__total-amount--desktop"
+             ></div>
             <div class="tickets-summary__footer">
               <div class="tickets-summary__total">
                 <div class="tickets-summary__total-content">
@@ -2735,6 +2760,7 @@
         </div>
       </div>
     </div>
+    <script src="./index.js"></script>
     <script
       crossorigin=""
       src="https://qatarmuseumsstorageprd.blob.core.windows.net/static/scripts/main.js"
