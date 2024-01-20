@@ -3,3 +3,23 @@
         width: 100% !important;
     }
 }
+
+
+.card--landscape:hover img{
+    scale: 0.9;
+}
+
+.card--landscape img{
+    border: 1px solid black;
+    transition: .4s;
+}
+
+
+.card--portrait:hover img{
+    scale: 0.9;
+}
+
+.card--portrait img{
+    border: 1px solid black;
+    transition: .4s;
+}
