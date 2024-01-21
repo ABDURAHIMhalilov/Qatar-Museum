@@ -366,7 +366,7 @@
                     </div>
                   </div>
                   <div class="tickets-form">
-                    <fieldset>
+                    <!-- <fieldset> -->
                       <legend>Enter your information</legend>
                       <div class="form-row">
                         <div
@@ -1024,7 +1024,7 @@
                           </div>
                         </div>
                       </div>
-                    </fieldset>
+                    <!-- </fieldset> -->
                   </div>
                 </div>
               </div>
@@ -1043,15 +1043,21 @@
             ></div>
             <div class="tickets-summary__box">
               <div
-                class="tickets-summary__basket"
-                id="tickets-summary-basket"
-              ></div>
-              <div
-                class="tickets-summary__total-amount tickets-summary__total-amount--desktop"
-              ></div>
-              <div
-                class="tickets-summary__content tickets-summary__content--desktop"
-              ></div>
+              class="tickets-summary__basket"
+              id="tickets-summary-basket"
+            ></div>
+            <div
+            id="nameGet"
+              class="tickets-summary__total-amount tickets-summary__total-amount--desktop"
+            >Title</div>
+            <div
+            id="data_item_div"
+              class="tickets-summary__content tickets-summary__content--desktop"
+            ></div>
+            <div
+            id="data_amout"
+            class="tickets-summary__total-amount tickets-summary__total-amount--desktop"
+             ></div>
               <div class="tickets-summary__footer">
                 <div class="tickets-summary__total">
                   <div class="tickets-summary__total-content">
@@ -1085,6 +1091,7 @@
             </div>
           </div>
         </form>
+        <script src="./index.js"></script>
         <!-- <script>
           const button = document.querySelector(
             ".button.tickets-summary__button"

@@ -153,19 +153,7 @@
       <link rel="stylesheet" href="/resources/demos/style.css">
       <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
       <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-      <script>
-$(document).ready(function () {
 
-$('#datepicker').datepicker({
-  onSelect: function(dateText, inst) {
-    var selectedDate = new Date(dateText);
-    console.log(selectedDate,"hello");
-    $('#selected-date').text(selectedDate.toDateString());
-  }
-});
-
-});
-        </script>
     <div class="container container--wrapper">
       <header class="container container--header" role="banner">
         <div class="menu-bar menu-bar--minimal-language">
@@ -375,7 +363,7 @@ $('#datepicker').datepicker({
               </div>
             </div>
           </div>
-          <div class="tickets-section tickets-section--no-border">
+          <div  class="tickets-section tickets-section--no-border">
                   <div class="tickets-section__flex-content">
                     <div class="tickets-section__grid">
                       <div class="tickets-section__content">
@@ -2301,134 +2289,15 @@ $('#datepicker').datepicker({
                             </div>
                           </div> -->
                           <div id="datepicker"></div>
-                          <div class="tickets-datetime-picker__timepicker">
+                          <div id="data_time_big_div" class="tickets-datetime-picker__timepicker">
                             <h2 class="tickets-datetime-picker__title">
                               Choose entry time
                             </h2>
                             <ul
                               class="tickets-datetime-picker__time-list"
                               aria-label=""
+                              id="data_time_div"
                             >
-                              <li class="tickets-datetime-picker__time-item">
-                                <input
-                                  type="radio"
-                                  id="ticket-time-d734d607-f068-ee11-a2e9-005056b0c847"
-                                  name="tickets-time"
-                                  value="d734d607-f068-ee11-a2e9-005056b0c847"
-                                /><label
-                                  class="tickets-datetime-picker__time-item-label"
-                                  for="ticket-time-d734d607-f068-ee11-a2e9-005056b0c847"
-                                  >9.00am</label
-                                >
-                              </li>
-                              <li class="tickets-datetime-picker__time-item">
-                                <input
-                                  type="radio"
-                                  id="ticket-time-c435d607-f068-ee11-a2e9-005056b0c847"
-                                  name="tickets-time"
-                                  value="c435d607-f068-ee11-a2e9-005056b0c847"
-                                /><label
-                                  class="tickets-datetime-picker__time-item-label"
-                                  for="ticket-time-c435d607-f068-ee11-a2e9-005056b0c847"
-                                  >10.00am</label
-                                >
-                              </li>
-                              <li class="tickets-datetime-picker__time-item">
-                                <input
-                                  type="radio"
-                                  id="ticket-time-b3bd6a0f-f068-ee11-a2e9-005056b0c847"
-                                  name="tickets-time"
-                                  value="b3bd6a0f-f068-ee11-a2e9-005056b0c847"
-                                /><label
-                                  class="tickets-datetime-picker__time-item-label"
-                                  for="ticket-time-b3bd6a0f-f068-ee11-a2e9-005056b0c847"
-                                  >11.00am</label
-                                >
-                              </li>
-                              <li class="tickets-datetime-picker__time-item">
-                                <input
-                                  type="radio"
-                                  id="ticket-time-3cf67c16-f068-ee11-a2e9-005056b0c847"
-                                  name="tickets-time"
-                                  value="3cf67c16-f068-ee11-a2e9-005056b0c847"
-                                /><label
-                                  class="tickets-datetime-picker__time-item-label"
-                                  for="ticket-time-3cf67c16-f068-ee11-a2e9-005056b0c847"
-                                  >12.00pm</label
-                                >
-                              </li>
-                              <li class="tickets-datetime-picker__time-item">
-                                <input
-                                  type="radio"
-                                  id="ticket-time-15f77c16-f068-ee11-a2e9-005056b0c847"
-                                  name="tickets-time"
-                                  value="15f77c16-f068-ee11-a2e9-005056b0c847"
-                                /><label
-                                  class="tickets-datetime-picker__time-item-label"
-                                  for="ticket-time-15f77c16-f068-ee11-a2e9-005056b0c847"
-                                  >1.00pm</label
-                                >
-                              </li>
-                              <li class="tickets-datetime-picker__time-item">
-                                <input
-                                  type="radio"
-                                  id="ticket-time-f6295020-f068-ee11-a2e9-005056b0c847"
-                                  name="tickets-time"
-                                  value="f6295020-f068-ee11-a2e9-005056b0c847"
-                                /><label
-                                  class="tickets-datetime-picker__time-item-label"
-                                  for="ticket-time-f6295020-f068-ee11-a2e9-005056b0c847"
-                                  >2.00pm</label
-                                >
-                              </li>
-                              <li class="tickets-datetime-picker__time-item">
-                                <input
-                                  type="radio"
-                                  id="ticket-time-ca2a5020-f068-ee11-a2e9-005056b0c847"
-                                  name="tickets-time"
-                                  value="ca2a5020-f068-ee11-a2e9-005056b0c847"
-                                /><label
-                                  class="tickets-datetime-picker__time-item-label"
-                                  for="ticket-time-ca2a5020-f068-ee11-a2e9-005056b0c847"
-                                  >3.00pm</label
-                                >
-                              </li>
-                              <li class="tickets-datetime-picker__time-item">
-                                <input
-                                  type="radio"
-                                  id="ticket-time-975c0e2b-f068-ee11-a2e9-005056b0c847"
-                                  name="tickets-time"
-                                  value="975c0e2b-f068-ee11-a2e9-005056b0c847"
-                                /><label
-                                  class="tickets-datetime-picker__time-item-label"
-                                  for="ticket-time-975c0e2b-f068-ee11-a2e9-005056b0c847"
-                                  >4.00pm</label
-                                >
-                              </li>
-                              <li class="tickets-datetime-picker__time-item">
-                                <input
-                                  type="radio"
-                                  id="ticket-time-4ee80431-f068-ee11-a2e9-005056b0c847"
-                                  name="tickets-time"
-                                  value="4ee80431-f068-ee11-a2e9-005056b0c847"
-                                /><label
-                                  class="tickets-datetime-picker__time-item-label"
-                                  for="ticket-time-4ee80431-f068-ee11-a2e9-005056b0c847"
-                                  >5.00pm</label
-                                >
-                              </li>
-                              <li class="tickets-datetime-picker__time-item">
-                                <input
-                                  type="radio"
-                                  id="ticket-time-20e90431-f068-ee11-a2e9-005056b0c847"
-                                  name="tickets-time"
-                                  value="20e90431-f068-ee11-a2e9-005056b0c847"
-                                /><label
-                                  class="tickets-datetime-picker__time-item-label"
-                                  for="ticket-time-20e90431-f068-ee11-a2e9-005056b0c847"
-                                  >6.00pm</label
-                                >
-                              </li>
                             </ul>
                             <p class="tickets-datetime-picker__footer">
                               Please arrive on time. Late arrivals will only be
@@ -2441,7 +2310,14 @@ $('#datepicker').datepicker({
                     </div>
                   </div>
           </div>
-          
+          <style>
+            #data_time_big_div{
+              display: none;
+            }
+            #data_time_soat:hover{
+              background: #bdbdbd !important;
+            }
+          </style>
         <div
           class="tickets-summary tickets-summary--app"
           data-currency-label="QAR"
@@ -2480,7 +2356,7 @@ $('#datepicker').datepicker({
                 </div>
                 <a
                   class="button button--primary tickets-summary__button"
-                  onclick="window.location = './information.html'"
+                  onclick="NextStepTwo()"
                   ><span class="button__icon button__icon--before"
                     ><svg
                       data-direction="text-direction"

@@ -447,5 +447,141 @@ setTimeout(()=>{
 },1000)
 
 
+$(document).ready(function () {
+
+  $('#datepicker').datepicker({
+    onSelect: function(dateText, inst) {
+      var selectedDate = new Date(dateText);
+      DataTime(selectedDate.getDay(),selectedDate)
+      // console.log(selectedDate.getDay(),"hello");
+      $('#selected-date').text(selectedDate.toDateString());
+    }
+  });
+  
+});
+
+
+var datatime=[
+  {
+    time:"9.00am",
+    timedate:"01/01/2024"
+  },
+  {
+    time:"10.00am",
+    timedate:"01/01/2024"
+  },
+  {
+    time:"11.00am",
+    timedate:"01/01/2024"
+  },
+  {
+    time:"12.00pm",
+    timedate:"01/01/2024"
+  },
+  {
+    time:"1.00pm",
+    timedate:"01/01/2024"
+  },
+  {
+    time:"2.00pm",
+    timedate:"01/01/2024"
+  },
+  {
+    time:"3.00pm",
+    timedate:"01/01/2024"
+  },
+  {
+    time:"4.00pm",
+    timedate:"01/01/2024"
+  },
+  {
+    time:"5.00pm",
+    timedate:"01/01/2024"
+  },
+  {
+    time:"6.00pm",
+    timedate:"01/01/2024"
+  },
+  {
+    time:"1.30pm",
+    timedate:"01/26/2024"
+  },
+  {
+    time:"2.00pm",
+    timedate:"01/26/2024"
+  },
+  {
+    time:"3.00pm",
+    timedate:"01/26/2024"
+  },
+  {
+    time:"4.00pm",
+    timedate:"01/26/2024"
+  },
+  {
+    time:"5.00pm",
+    timedate:"01/26/2024"
+  },
+  {
+    time:"6.00pm",
+    timedate:"01/26/2024"
+  },
+]
+
+var dateEshik=false
+
+function DataTime(date,vaqt){
+  dateEshik=true
+  sessionStorage.setItem("date",vaqt)
+  document.querySelector("#data_time_div").innerHTML=""
+  if(date==5){
+    const Filter=datatime.filter(item=>item.timedate=="01/26/2024")
+    Filter.map((item,key)=>{
+      document.querySelector("#data_time_big_div").style="display:block"
+      document.querySelector("#data_time_div").innerHTML+=` <li onclick='OrqaFon(${key},"${vaqt}","${item.time}")' class="tickets-datetime-picker__time-item">
+      <label
+        id="data_time_soat"
+        class="tickets-datetime-picker__time-item-label"
+        >${item.time}</label
+      >
+    </li>`
+    })
+    
+  }
+  if(date!=5){
+    const Filter=datatime.filter(item=>item.timedate=="01/01/2024")
+    Filter.map((item,key)=>{
+      document.querySelector("#data_time_big_div").style="display:block"
+      document.querySelector("#data_time_div").innerHTML+=` <li onclick='OrqaFon(${key},"${vaqt}","${item.time}")' class="tickets-datetime-picker__time-item">
+      <label
+        id="data_time_soat"
+        class="tickets-datetime-picker__time-item-label"
+        >${item.time}</label
+      >
+    </li>`
+    })
+  }
+}
+
+
+function OrqaFon(key,date,time){
+  for (let i = 0; i < document.querySelectorAll("#data_time_soat").length; i++) {
+    if(i==key){
+        document.querySelectorAll("#data_time_soat")[i].style="background: #464646;color:white;"
+    }else{
+        document.querySelectorAll("#data_time_soat")[i].style="background: none;color:black;"
+    }
+  }
+  sessionStorage.setItem("date",date)
+  sessionStorage.setItem("datetime",time)
+}
+
+
+function NextStepTwo(){
+  if(dateEshik){
+    window.location = "./information.html"
+  }
+}
+
 
   
