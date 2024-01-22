@@ -1244,7 +1244,12 @@
           data-x-label="x"
           id="tickets-summary"
         >
-          <div
+
+
+        <div class="tickets-summary__box tickets-summary__box--expanded" id='openCard' style='display: none;'><div class="tickets-summary__basket" id="tickets-summary-basket"><h5 id="nameGet">National Museum of Qatar Plus Special Exhibitions</h5><p>1 x Adult Resident of Qatar<br></p></div><div class="tickets-summary__total-amount tickets-summary__total-amount--desktop"></div><div class="tickets-summary__content tickets-summary__content--desktop"></div><div class="tickets-summary__footer"><div class="tickets-summary__total"><div class="tickets-summary__total-content"><a class="tickets-summary__view-order" href="?">View order</a><div class="tickets-summary__total-amount tickets-summary__total-amount--mobile"></div></div><button class="button button--primary tickets-summary__button" type="submit"><span class="button__icon button__icon--before"><svg data-direction="text-direction" height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="m17 10-.9.9 3.5 3.5H9v1.2h10.6l-3.5 3.5.9.9 5-5z"></path></svg></span> <span class="button__span">Next step</span></button></div></div></div>
+          
+        
+        <div
             class="tickets-summary__content tickets-summary__content--mobile"
           ></div>
           <div class="tickets-summary__box">
@@ -1264,9 +1269,17 @@
             <h4 id="totalprice"></h4>
           </div>
             <div class="tickets-summary__footer">
+              <div class="open_Div" style="display: none">
+                <p>as</p>
+              </div>
               <div class="tickets-summary__total">
                 <div class="tickets-summary__total-content">
-                  <a class="tickets-summary__view-order" href="?">View order</a>
+                  <div class="tickets-summary__view-order" id="view_open" onclick="document.querySelector('#openCard').style='display: block'
+                   document.querySelector('#view_open').style='display: none'
+                   document.querySelector('#view_close').style='display: block'">View order</div>
+                  <div class="tickets-summary__view-order" id="view_close" style="display: none;" onclick="document.querySelector('#openCard').style='display: none'
+                  document.querySelector('#view_open').style='display: block'
+                  document.querySelector('#view_close').style='display: none'">View order</div>
                   <div
                     class="tickets-summary__total-amount tickets-summary__total-amount--mobile"
                   ></div>

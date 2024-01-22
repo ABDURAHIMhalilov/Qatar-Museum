@@ -585,5 +585,5 @@ function NextStepTwo(){
 
 
 function NextStepThree(){
-  
+  window.location = ''
 }
