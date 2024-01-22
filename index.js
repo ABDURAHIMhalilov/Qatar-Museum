@@ -1,6 +1,8 @@
 var nameGet = localStorage.getItem('name')
 if (nameGet) {
-    document.querySelector('#nameGet').innerHTML=nameGet
+    for (let i = 0; i < document.querySelectorAll('#nameGet').length; i++) {
+      document.querySelectorAll('#nameGet')[i].innerHTML=nameGet
+    }
     console.log(nameGet);
 }else {
     console.log('no');
@@ -339,6 +341,48 @@ function CategoryPush(id){
   document.querySelector("#total_price_text").innerHTML=""
   document.querySelector("#totalprice").innerHTML=""
   document.querySelector("#price_map").innerHTML=0
+  if(id==1){
+    for (let i = 0; i < document.querySelectorAll('#nameGet').length; i++) {
+      document.querySelectorAll('#nameGet')[i].innerHTML="NATIONAL MUSEUM OF QATAR PLUS SPECIAL EXHIBITIONS"
+    }
+    localStorage.setItem('name',"NATIONAL MUSEUM OF QATAR PLUS SPECIAL EXHIBITIONS")
+  }
+  if(id==2){
+    for (let i = 0; i < document.querySelectorAll('#nameGet').length; i++) {
+      document.querySelectorAll('#nameGet')[i].innerHTML="3-2-1 Qatar Olympic and Sports Museum"
+    }
+    localStorage.setItem('name',"3-2-1 Qatar Olympic and Sports Museum")
+  }
+  if(id==3){
+    for (let i = 0; i < document.querySelectorAll('#nameGet').length; i++) {
+      document.querySelectorAll('#nameGet')[i].innerHTML="Museum of Islamic Art"
+    }
+    localStorage.setItem('name',"Museum of Islamic Art")
+  }
+  if(id==4){
+    for (let i = 0; i < document.querySelectorAll('#nameGet').length; i++) {
+      document.querySelectorAll('#nameGet')[i].innerHTML="Mathaf: Arab Museum of Modern Art"
+    }
+    localStorage.setItem('name',"Mathaf: Arab Museum of Modern Art")
+  }
+  if(id==5){
+    for (let i = 0; i < document.querySelectorAll('#nameGet').length; i++) {
+      document.querySelectorAll('#nameGet')[i].innerHTML="Al Zubarah UNESCO World Heritage Site"
+    }
+    localStorage.setItem('name',"Al Zubarah UNESCO World Heritage Site")
+  }
+  if(id==6){
+    for (let i = 0; i < document.querySelectorAll('#nameGet').length; i++) {
+      document.querySelectorAll('#nameGet')[i].innerHTML="Dan Flavin / Donald Judd: Doha"
+    }
+    localStorage.setItem('name',"Dan Flavin / Donald Judd: Doha")
+  }
+  if(id==7){
+    for (let i = 0; i < document.querySelectorAll('#nameGet').length; i++) {
+      document.querySelectorAll('#nameGet')[i].innerHTML="Dadu at EXPO 2023"
+    }
+    localStorage.setItem('name',"Dadu at EXPO 2023")
+  }
 
 
 }
@@ -352,24 +396,17 @@ function DataPlus(key,price,name){
     for (let i = 0; i < document.querySelectorAll("#total_price_number").length; i++) {
       if(key==document.querySelectorAll("#total_price_number")[i].getAttribute("class")){
         document.querySelectorAll("#total_price_number")[i].innerHTML=document.querySelectorAll(".pilusminus")[key].value*1+1
-        var a={
-          id:ID,
-          count:document.querySelectorAll(".pilusminus")[key].value*1+1,
-          title:name,
-        }
-        JSONdata.splice(i,1,a)
-        ID+=1
+      }
+    }
+    for (let i = 0; i < document.querySelectorAll("#total_price_number1").length; i++) {
+      if(key==document.querySelectorAll("#total_price_number1")[i].getAttribute("class")){
+        document.querySelectorAll("#total_price_number1")[i].innerHTML=document.querySelectorAll(".pilusminus")[key].value*1+1
       }
     }
   }else{
-    document.querySelector("#total_price_text").innerHTML+=`<div id="total_big_text_div"><span class=${key} id="total_price_number">${document.querySelectorAll(".pilusminus")[key].value*1+1}</span> x <span id="total_price_text">${name}</span></div>`
-    var a={
-      id:ID,
-      count:document.querySelectorAll(".pilusminus")[key].value*1+1,
-      title:name,
-    }
-    JSONdata.push(a)
-    ID+=1
+    document.querySelector("#total_price_text").innerHTML+=`<div id="total_big_text_div"><span class=${key} id="total_price_number">${document.querySelectorAll(".pilusminus")[key].value*1+1}</span> x <span id="total_price_text_name">${name}</span></div>`
+    document.querySelector("#total_price_text1").innerHTML+=`<div id="total_big_text_div1"><span class=${key} id="total_price_number1">${document.querySelectorAll(".pilusminus")[key].value*1+1}</span> x <span id="total_price_text_name1">${name}</span></div>`
+  
   }
 
 
@@ -381,8 +418,9 @@ function DataPlus(key,price,name){
   }
   JSONprice=a
   document.querySelector("#price_map").innerHTML="QAR "+a
-  document.querySelector("#totalprice").innerHTML=`Total: QAR ${a}`
-  console.log(JSONdata,"helo");
+  for (let i = 0; i < document.querySelectorAll("#totalprice").length; i++) {
+    document.querySelectorAll("#totalprice")[i].innerHTML=`Total: QAR ${a}`
+  }
 }
 function DataMinus(key,price,name){
   if(document.querySelectorAll(".pilusminus")[key].value>0){
@@ -394,19 +432,19 @@ function DataMinus(key,price,name){
     for (let i = 0; i < document.querySelectorAll("#total_price_number").length; i++) {
         if(key==document.querySelectorAll("#total_price_number")[i].getAttribute("class")){
           document.querySelectorAll("#total_price_number")[i].innerHTML=document.querySelectorAll(".pilusminus")[key].value
-          var a={
-            id:ID,
-            count:document.querySelectorAll(".pilusminus")[key].value*1,
-            title:name,
-          }
-          JSONdata.splice(i,1,a)
-          ID+=1
           if(document.querySelectorAll(".pilusminus")[key].value==0){
-            JSONdata.splice(i,1)
             document.querySelectorAll("#total_big_text_div")[i].style="display:none;"   
           }
         }
     }
+    for (let i = 0; i < document.querySelectorAll("#total_price_number1").length; i++) {
+      if(key==document.querySelectorAll("#total_price_number1")[i].getAttribute("class")){
+        document.querySelectorAll("#total_price_number1")[i].innerHTML=document.querySelectorAll(".pilusminus")[key].value
+        if(document.querySelectorAll(".pilusminus")[key].value==0){
+          document.querySelectorAll("#total_big_text_div1")[i].style="display:none;"   
+        }
+      }
+  }
   }
   var a=0
   for (let i = 0; i < document.querySelectorAll("#price").length; i++) {
@@ -414,10 +452,14 @@ function DataMinus(key,price,name){
   }
   document.querySelector("#price_map").innerHTML="QAR "+a
   JSONprice=a
-  document.querySelector("#totalprice").innerHTML=`Total: QAR ${a}`
+  for (let i = 0; i < document.querySelectorAll("#totalprice").length; i++) {
+    document.querySelectorAll("#totalprice")[i].innerHTML=`Total: QAR ${a}`
+  }
   if(a==0){
     document.querySelector("#price_map").innerHTML=a
-    document.querySelector("#totalprice").innerHTML=""
+    for (let i = 0; i < document.querySelectorAll("#totalprice").length; i++) {
+      document.querySelectorAll("#totalprice")[i].innerHTML=""
+    }
   }
 }
 
@@ -429,7 +471,8 @@ function NextStep(){
     }
   }
   if(a){
-    sessionStorage.setItem("data",JSON.stringify(JSONdata))
+    sessionStorage.setItem("data",JSON.stringify(document.querySelector("#total_price_text").innerHTML))
+    sessionStorage.setItem("data",JSON.stringify(document.querySelector("#total_price_text1").innerHTML))
     sessionStorage.setItem("dataprice",JSONprice)
     window.location="./pick-a-date.html"
   }
@@ -439,10 +482,12 @@ function NextStep(){
 setTimeout(()=>{
   if(JSON.parse(sessionStorage.getItem("data"))){
     var a=JSON.parse(sessionStorage.getItem("data"))
-    a.map(item=>{
-       document.querySelector("#data_item_div").innerHTML+=`<div>${item.count} x ${item.title}</div>`
-       document.querySelector("#data_amout").innerHTML="Total: QAR "+sessionStorage.getItem("dataprice")
-    })
+    for (let i = 0; i < document.querySelectorAll("#data_amout").length; i++) {
+      document.querySelectorAll("#data_amout")[i].innerHTML="Total: QAR "+sessionStorage.getItem("dataprice")      
+    }
+    for (let i = 0; i < document.querySelectorAll("#data_item_div").length; i++) {
+      document.querySelectorAll("#data_item_div")[i].innerHTML=a
+    }
   }
 },1000)
 
@@ -531,6 +576,7 @@ var datatime=[
 var dateEshik=false
 
 function DataTime(date,vaqt){
+  console.log(date,"hello");
   dateEshik=true
   sessionStorage.setItem("date",vaqt)
   document.querySelector("#data_time_div").innerHTML=""
@@ -585,5 +631,67 @@ function NextStepTwo(){
 
 
 function NextStepThree(){
-  window.location = ''
+  if(document.querySelector("#id_first_name").value==""){
+    document.querySelector("#id_first_name").style="border:1px solid red;"
+    document.querySelector("#id_first_name_title").style="color:red;"
+    document.querySelectorAll("#input_error")[0].innerHTML="Please enter your first name."
+  }else{
+    document.querySelector("#id_first_name_title").style="color:black;"
+    document.querySelector("#id_first_name").style="border:1px solid black;"
+    document.querySelectorAll("#input_error")[0].innerHTML=""
+  }
+  if(document.querySelector("#id_last_name").value==""){
+    document.querySelector("#id_last_name").style="border:1px solid red;"
+    document.querySelector("#id_last_name_title").style="color:red;"
+    document.querySelectorAll("#input_error")[1].innerHTML="Please enter your last name."
+  }else{
+    document.querySelector("#id_last_name_title").style="color:black;"
+    document.querySelector("#id_last_name").style="border:1px solid black;"
+    document.querySelectorAll("#input_error")[1].innerHTML=""   
+  }
+  if(document.querySelector("#id_email").value==""){
+    document.querySelector("#id_email").style="border:1px solid red;"
+    document.querySelector("#id_email_title").style="color:red;"
+    document.querySelectorAll("#input_error")[2].innerHTML="Please enter your email address."   
+  }else{
+    document.querySelector("#id_email").style="border:1px solid black;"
+    document.querySelector("#id_email_title").style="color:black;"
+    document.querySelectorAll("#input_error")[2].innerHTML=""   
+  }
+  if(!document.querySelector("#id_email").value.includes("@")){
+    document.querySelector("#id_email").style="border:1px solid red;"
+    document.querySelector("#id_email_title").style="color:red;"
+    document.querySelectorAll("#input_error")[2].innerHTML="Please check your email address is correct. It must contain an @, a period (.) and have no spaces."   
+  }else{
+    document.querySelector("#id_email").style="border:1px solid black;"
+    document.querySelector("#id_email_title").style="color:black;"
+    document.querySelectorAll("#input_error")[2].innerHTML=""   
+  }
+  if(!document.querySelector("#id_accept_terms_accept_terms").checked){
+    document.querySelectorAll(".option-field .option-field__icon")[2].style="color:red;"
+    document.querySelector("#input_checked_text").style="color:red;"
+    document.querySelectorAll("#input_error")[3].innerHTML="Please accept our Terms and Conditions."   
+  }else{
+    document.querySelectorAll(".option-field .option-field__icon")[2].style="color:black;"
+    document.querySelector("#input_checked_text").style="color:black;"
+    document.querySelectorAll("#input_error")[3].innerHTML=""   
+
+  }
+
+  
+  if(document.querySelector("#id_first_name").value!="" && document.querySelector("#id_last_name").value!="" && document.querySelector("#id_email").value!="" && document.querySelector("#id_accept_terms_accept_terms").checked && document.querySelector("#id_email").value.includes("@")){
+    sessionStorage.setItem("firstname",document.querySelector("#id_first_name").value)
+    sessionStorage.setItem("lastname",document.querySelector("#id_last_name").value)
+    sessionStorage.setItem("email",document.querySelector("#id_email").value)
+    sessionStorage.setItem("phone",document.querySelector("#id_national_number").value+" "+document.querySelector("#id_phone").value)
+
+    window.location="./reviews.html"
+  }
 }
+
+
+
+
+
+
+

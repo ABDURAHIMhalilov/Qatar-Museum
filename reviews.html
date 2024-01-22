@@ -357,26 +357,25 @@
                     >
                   </div>
                 </div>
+                
+                
                 <div class="tickets-details">
                   <h2>Confirm your details</h2>
                   <p>Name</p>
-                  <p aria-label="Name" class="tickets-details__entry">
-                    sdafghg sdsfg
+                  <p aria-label="Name" id="rewiw_name" class="tickets-details__entry">
+                    
                   </p>
                   <p>Email</p>
                   <p
+                  id="rewiw_email"
                     aria-label="Email"
                     class="tickets-details__entry tickets-details__entry--email"
                   >
-                    asdfg@gmail.com
-                  </p>
-                  <p>Nationality</p>
-                  <p aria-label="Nationality" class="tickets-details__entry">
-                    Belgium
+                    
                   </p>
                   <p>Phone</p>
-                  <p aria-label="Phone" class="tickets-details__entry">
-                    +974 771228
+                  <p id="rewiw_phone" aria-label="Phone" class="tickets-details__entry">
+                    
                   </p>
                   <a
                     class="button button--clean"
@@ -400,6 +399,16 @@
             </div>
           </div>
         </div>
+        <script>
+          var firstname=sessionStorage.getItem("firstname")?sessionStorage.getItem("firstname"):""
+          var lastname=sessionStorage.getItem("lastname")?sessionStorage.getItem("lastname"):""
+          var email=sessionStorage.getItem("email")?sessionStorage.getItem("email"):""
+          var phone=sessionStorage.getItem("email")?sessionStorage.getItem("phone"):""
+        
+          document.querySelector("#rewiw_name").innerHTML=firstname+" "+lastname
+          document.querySelector("#rewiw_email").innerHTML=email
+          document.querySelector("#rewiw_phone").innerHTML=phone
+        </script>
         <div class="tickets-section tickets-section--no-border">
           <div class="tickets-section__flex-content">
             <div class="tickets-section__grid">
@@ -408,10 +417,11 @@
                   <div class="tickets-confirm__content">
                     <h5>Confirm your tickets</h5>
                     <p
+                    id="nameGet"
                       aria-label="Confirm your tickets-ticket-title"
                       class="tickets-confirm__museum"
                     >
-                      Dadu at EXPO 2023
+                      
                     </p>
                   </div>
                   <div class="tickets-confirm__content">
@@ -421,10 +431,10 @@
                       class="tickets-confirm__daytime"
                     >
                       <div class="tickets-confirm__data-box">
-                        <p>22 February 2024</p>
+                        <p id="date_rewiew"></p>
                       </div>
-                      <span>entry at</span>
-                      <div class="tickets-confirm__data-box"><p>6.00pm</p></div>
+                      <span id="date_rewiew_time">entry at</span>
+                      <div id="date_rewiew_time1" class="tickets-confirm__data-box"></div>
                     </div>
                   </div>
                   <a
@@ -451,18 +461,20 @@
                     <div
                       aria-label="Ticket type: X 1 Adult Resident of Qatar QAR 15"
                       class="tickets-confirm__ticket-row"
+                      id="rewiew_data_div"
+                      style="display: block;"
                     >
-                      <div class="tickets-confirm__data-box">
+                      <!-- <div class="tickets-confirm__data-box">
                         <p>X 1 Adult Resident of Qatar</p>
                       </div>
-                      <p class="tickets-confirm__text-val">QAR 15</p>
+                      <p class="tickets-confirm__text-val">QAR 15</p> -->
                     </div>
                     <div
                       class="tickets-confirm__ticket-row tickets-confirm__ticket-row--total"
                     >
                       <h5>Total</h5>
-                      <p aria-label="Total" class="tickets-confirm__text-val">
-                        QAR 15
+                      <p id="total_price_rewiew" aria-label="Total" class="tickets-confirm__text-val">
+                        
                       </p>
                     </div>
                   </div>
@@ -507,58 +519,76 @@
           </div>
         </div>
         <div
-          class="tickets-summary tickets-summary--app"
-          data-currency-label="QAR"
-          data-show-exhibition-title="true"
-          data-total-label="Total:"
-          data-x-label="x"
-          id="tickets-summary"
-        >
+        class="tickets-summary tickets-summary--app"
+        data-currency-label="QAR"
+        data-show-exhibition-title="false"
+        data-total-label="Total:"
+        data-x-label="x"
+        id="tickets-summary"
+      >
+
+
+      <div class="tickets-summary__box tickets-summary__box--expanded" id='openCard' style='display: none;'><div class="tickets-summary__basket" id="tickets-summary-basket"><h5 id="nameGet">National Museum of Qatar Plus Special Exhibitions</h5><div id="data_item_div"></div></div><div class="tickets-summary__total-amount tickets-summary__total-amount--desktop"></div><div class="tickets-summary__content tickets-summary__content--desktop"></div><div class="tickets-summary__footer"><div class="tickets-summary__total"><div class="tickets-summary__total-content"><a class="tickets-summary__view-order" href="?">View order</a><div class="tickets-summary__total-amount tickets-summary__total-amount--mobile"></div></div><button onclick="NextStepThree()" class="button button--primary tickets-summary__button" type="submit"><span class="button__icon button__icon--before"><svg data-direction="text-direction" height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="m17 10-.9.9 3.5 3.5H9v1.2h10.6l-3.5 3.5.9.9 5-5z"></path></svg></span> <span class="button__span">Next step</span></button></div></div></div>
+        
+      
+      <div
+          class="tickets-summary__content tickets-summary__content--mobile"
+        ></div>
+        <div class="tickets-summary__box">
           <div
-            class="tickets-summary__content tickets-summary__content--mobile"
-          ></div>
-          <div class="tickets-summary__box">
-            <div
-              class="tickets-summary__basket"
-              id="tickets-summary-basket"
-            ></div>
-            <div
-              class="tickets-summary__total-amount tickets-summary__total-amount--desktop"
-            ></div>
-            <div
-              class="tickets-summary__content tickets-summary__content--desktop"
-            ></div>
-            <div class="tickets-summary__footer">
-              <div class="tickets-summary__total">
-                <div class="tickets-summary__total-content">
-                  <a class="tickets-summary__view-order" href="?">View order</a>
-                  <div
-                    class="tickets-summary__total-amount tickets-summary__total-amount--mobile"
-                  ></div>
-                </div>
-                <a
-                  class="button button--primary tickets-summary__button"
-                  href="./payment.html"
-                  ><span class="button__icon button__icon--before"
-                    ><svg
-                      data-direction="text-direction"
-                      height="30"
-                      viewBox="0 0 30 30"
-                      width="30"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m17 10-.9.9 3.5 3.5H9v1.2h10.6l-3.5 3.5.9.9 5-5z"
-                      ></path></svg
-                  ></span>
-                  <span class="button__span"
-                    >Payment &amp; confirmation</span
-                  ></a
-                >
+            class="tickets-summary__total-amount tickets-summary__total-amount--desktop"
+          >
+            <h4 id="nameGet"></h4>
+          </div>
+          <div
+          id="data_item_div"
+            class="tickets-summary__content tickets-summary__content--desktop"
+          >
+          </div>
+          <div
+          class="tickets-summary__total-amount tickets-summary__total-amount--desktop"
+        >
+          <h4 id="data_amout"></h4>
+        </div>
+          <div class="tickets-summary__footer">
+            <div class="open_Div" style="display: none">
+              <p>as</p>
+            </div>
+            <div class="tickets-summary__total">
+              <div class="tickets-summary__total-content">
+                <div class="tickets-summary__view-order" id="view_open" onclick="document.querySelector('#openCard').style='display: block'
+                 document.querySelector('#view_open').style='display: none'
+                 document.querySelector('#view_close').style='display: block'">View order</div>
+                <div class="tickets-summary__view-order" id="view_close" style="display: none;" onclick="document.querySelector('#openCard').style='display: none'
+                document.querySelector('#view_open').style='display: block'
+                document.querySelector('#view_close').style='display: none'">View order</div>
+                <div
+                id="data_amout"
+                  class="tickets-summary__total-amount tickets-summary__total-amount--mobile"
+                ></div>
               </div>
+              <div
+                onclick="NextStepThree()"
+                class="button button--primary tickets-summary__button"
+                >
+                <span  class="button__icon button__icon--before"
+                  ><svg
+                    data-direction="text-direction"
+                    height="30"
+                    viewBox="0 0 30 30"
+                    width="30"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m17 10-.9.9 3.5 3.5H9v1.2h10.6l-3.5 3.5.9.9 5-5z"
+                    ></path></svg
+                ></span>
+                <span class="button__span">Next step</span></div
+              >
             </div>
           </div>
         </div>
+      </div>
         <script>
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({ ecommerce: null });
@@ -858,6 +888,47 @@
         </div>
       </div>
     </div>
+    <script>
+      setTimeout(() => {
+        var date=new Date(sessionStorage.getItem("date")?sessionStorage.getItem("date"):"")
+        var a=""
+        var b=date.getDay()
+        if(b==0){
+            a="Sunduy"
+        }
+        if(b==1){
+          a="Monday"
+        }
+        if(b==2){
+          a="Tuesday"
+        }
+        if(b==3){
+          a="Wednesday"
+        }
+        if(b==4){
+          a="Thursday"
+        }
+        if(b==5){
+          a="Friday"
+        }
+        if(b==6){
+          a="Saturday"
+        }
+        
+        var dateTartib=date.getDate()+" "+a+" "+date.getFullYear()
+        document.querySelector("#date_rewiew").innerHTML=dateTartib
+        if(sessionStorage.getItem("datetime")){
+          document.querySelector("#date_rewiew_time1").innerHTML=`<p>${sessionStorage.getItem("datetime")}</p>`
+        }
+        else{
+          document.querySelector("#date_rewiew_time").style="display:none"
+          document.querySelector("#date_rewiew_time1").style="display:none"
+        }
+        document.querySelector("#total_price_rewiew").innerHTML=sessionStorage.getItem("dataprice")?"QAR "+sessionStorage.getItem("dataprice"):""
+        document.querySelector("#rewiew_data_div").innerHTML=sessionStorage.getItem("data")?JSON.parse(sessionStorage.getItem("data")):""
+      }, 1000);
+    </script>
+    <script src="./index.js"></script>
     <script
       crossorigin=""
       src="https://qatarmuseumsstorageprd.blob.core.windows.net/static/scripts/main.js"

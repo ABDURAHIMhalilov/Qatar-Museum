@@ -329,8 +329,7 @@
                       <label
                         class="tickets-list-item__flex"
                         for="museum-list-nmoq-museum-plus-special-exhibitions-"
-                        onclick="localStorage.setItem('name', 'NATIONAL MUSEUM OF QATAR PLUS SPECIAL EXHIBITIONS')
-    document.querySelector('#nameGet').innerHTML='NATIONAL MUSEUM OF QATAR PLUS SPECIAL EXHIBITIONS'"
+                       
                         >
                         <div class="tickets-list-item__content">
                           <div class="tickets-list-item__content-info">
@@ -398,8 +397,7 @@
                       /><label
                         class="tickets-list-item__flex"
                         for="museum-list-qosm-museum-"
-                        onclick="localStorage.setItem('name', '3-2-1 Qatar Olympic and Sports Museum')
-    document.querySelector('#nameGet').innerHTML='3-2-1 Qatar Olympic and Sports Museum'"
+
                         
                         "
 
@@ -451,11 +449,6 @@
                       /><label
                         class="tickets-list-item__flex"
                         for="museum-list-mia-museum-"
-                        onclick="localStorage.setItem('name', 'Museum of Islamic Art')
-    document.querySelector('#nameGet').innerHTML='Museum of Islamic Art'"
-                        
-                        "
-                        
                         >
                         <div class="tickets-list-item__content">
                           <div class="tickets-list-item__content-info">
@@ -516,10 +509,6 @@
                       /><label
                         class="tickets-list-item__flex"
                         for="museum-list-mathaf-museum-plus-special-exhibitions-"
-                        onclick="localStorage.setItem('name', 'Mathaf: Arab Museum of Modern Art')
-    document.querySelector('#nameGet').innerHTML='Mathaf: Arab Museum of Modern Art'"
-                        
-                        "
 
                         >
                         <div class="tickets-list-item__content">
@@ -600,9 +589,6 @@
                       /><label
                         class="tickets-list-item__flex"
                         for="museum-list-al-zubarah-"
-                        onclick="localStorage.setItem('name', 'Al Zubarah UNESCO World Heritage Site')
-    document.querySelector('#nameGet').innerHTML='Al Zubarah UNESCO World Heritage Site'"
-    "
 
                         ><div class="tickets-list-item__content">
                           <div class="tickets-list-item__content-info">
@@ -663,10 +649,6 @@
                       /><label
                         class="tickets-list-item__flex"
                         for="museum-list-flavin-judd-"
-                        onclick="localStorage.setItem('name', ' Dan Flavin / Donald Judd: Doha')
-    document.querySelector('#nameGet').innerHTML='Dan Flavin / Donald Judd: Doha'"
-    "
-
                         >
                         <div class="tickets-list-item__content">
                           <div class="tickets-list-item__content-info">
@@ -724,10 +706,6 @@
                       /><label
                         class="tickets-list-item__flex"
                         for="museum-list-dadu-"
-                        onclick="localStorage.setItem('name', 'Dadu at EXPO 2023')
-    document.querySelector('#nameGet').innerHTML='Dadu at EXPO 2023'"
-    "
-
                         >
                         <div class="tickets-list-item__content">
                           <div class="tickets-list-item__content-info">
@@ -1246,7 +1224,7 @@
         >
 
 
-        <div class="tickets-summary__box tickets-summary__box--expanded" id='openCard' style='display: none;'><div class="tickets-summary__basket" id="tickets-summary-basket"><h5 id="nameGet">National Museum of Qatar Plus Special Exhibitions</h5><p>1 x Adult Resident of Qatar<br></p></div><div class="tickets-summary__total-amount tickets-summary__total-amount--desktop"></div><div class="tickets-summary__content tickets-summary__content--desktop"></div><div class="tickets-summary__footer"><div class="tickets-summary__total"><div class="tickets-summary__total-content"><a class="tickets-summary__view-order" href="?">View order</a><div class="tickets-summary__total-amount tickets-summary__total-amount--mobile"></div></div><button class="button button--primary tickets-summary__button" type="submit"><span class="button__icon button__icon--before"><svg data-direction="text-direction" height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="m17 10-.9.9 3.5 3.5H9v1.2h10.6l-3.5 3.5.9.9 5-5z"></path></svg></span> <span class="button__span">Next step</span></button></div></div></div>
+        <div class="tickets-summary__box tickets-summary__box--expanded" id='openCard' style='display: none;'><div class="tickets-summary__basket" id="tickets-summary-basket"><h5 id="nameGet">National Museum of Qatar Plus Special Exhibitions</h5><div id="total_price_text1"></div></div><div class="tickets-summary__total-amount tickets-summary__total-amount--desktop"></div><div class="tickets-summary__content tickets-summary__content--desktop"></div><div class="tickets-summary__footer"><div class="tickets-summary__total"><div class="tickets-summary__total-content"><a class="tickets-summary__view-order" href="?">View order</a><div class="tickets-summary__total-amount tickets-summary__total-amount--mobile"></div></div><button class="button button--primary tickets-summary__button" type="submit"><span class="button__icon button__icon--before"><svg data-direction="text-direction" height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="m17 10-.9.9 3.5 3.5H9v1.2h10.6l-3.5 3.5.9.9 5-5z"></path></svg></span> <span class="button__span">Next step</span></button></div></div></div>
           
         
         <div
@@ -1281,6 +1259,7 @@
                   document.querySelector('#view_open').style='display: block'
                   document.querySelector('#view_close').style='display: none'">View order</div>
                   <div
+                  id="totalprice"
                     class="tickets-summary__total-amount tickets-summary__total-amount--mobile"
                   ></div>
                 </div>

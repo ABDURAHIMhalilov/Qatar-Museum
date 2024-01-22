@@ -24,3 +24,7 @@
     transition: .4s;
 }
 
+#input_error{
+    color: red;
+    font-size: 18px;
+}

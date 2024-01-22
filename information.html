@@ -362,7 +362,7 @@
                       <div
                         class="text-field text-field--text text-field--required"
                       >
-                        <label class="text-field__label" for="id_first_name"
+                        <label class="text-field__label" id="id_first_name_title" for="id_first_name"
                           >FIRST NAME</label
                         >
                         <div class="text-field__wrapper">
@@ -375,11 +375,13 @@
                             value=""
                           />
                         </div>
+                        <p id="input_error"></p>
                       </div>
+                      <link rel="stylesheet" href="./style.css">
                       <div
                         class="text-field text-field--text text-field--required"
                       >
-                        <label class="text-field__label" for="id_last_name"
+                        <label class="text-field__label" id="id_last_name_title" for="id_last_name"
                           >LAST NAME</label
                         >
                         <div class="text-field__wrapper">
@@ -392,13 +394,14 @@
                             value=""
                           />
                         </div>
+                        <p id="input_error"></p>
                       </div>
                     </div>
                     <div class="form-row">
                       <div
                         class="text-field text-field--text text-field--required"
                       >
-                        <label class="text-field__label" for="id_email"
+                        <label class="text-field__label" id="id_email_title" for="id_email"
                           >EMAIL</label
                         >
                         <div class="text-field__wrapper">
@@ -408,9 +411,9 @@
                             id="id_email"
                             name="email"
                             type="text"
-                            value=""
                           />
                         </div>
+                        <p id="input_error"></p>
                         <span class="text-field__helptext"
                           >Please only use personal, not corporate, email
                           addresses.</span
@@ -940,7 +943,9 @@
                               name="mailing_list"
                               type="checkbox"
                               value="mailing_list"
-                            /><label
+                            />
+                            <label
+                            id="input_checked_text1"
                               class="option-field__input-label"
                               for="id_mailing_list_mailing_list"
                               ><span class="option-field__input-label-span"
@@ -979,10 +984,11 @@
                               name="accept_terms"
                               type="checkbox"
                               value="accept_terms"
-                            /><label
+                            />
+                            <label
                               class="option-field__input-label"
                               for="id_accept_terms_accept_terms"
-                              ><span class="option-field__input-label-span"
+                              ><span id="input_checked_text" class="option-field__input-label-span"
                                 >Accept
                                 <a target="_blank"
                                   >Terms &amp; Conditions</a
@@ -1004,9 +1010,11 @@
                                   ></rect></svg
                               ></span>
                               <span
+                              id="input_checked"
                                 class="option-field__icon option-field__icon-foreground"
                               ></span
                             ></label>
+                            <p id="input_error"></p>
                           </div>
                         </div>
                       </div>
@@ -1027,7 +1035,7 @@
         >
 
 
-        <div class="tickets-summary__box tickets-summary__box--expanded" id='openCard' style='display: none;'><div class="tickets-summary__basket" id="tickets-summary-basket"><h5 id="nameGet">National Museum of Qatar Plus Special Exhibitions</h5><p>1 x Adult Resident of Qatar<br></p></div><div class="tickets-summary__total-amount tickets-summary__total-amount--desktop"></div><div class="tickets-summary__content tickets-summary__content--desktop"></div><div class="tickets-summary__footer"><div class="tickets-summary__total"><div class="tickets-summary__total-content"><a class="tickets-summary__view-order" href="?">View order</a><div class="tickets-summary__total-amount tickets-summary__total-amount--mobile"></div></div><button class="button button--primary tickets-summary__button" type="submit"><span class="button__icon button__icon--before"><svg data-direction="text-direction" height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="m17 10-.9.9 3.5 3.5H9v1.2h10.6l-3.5 3.5.9.9 5-5z"></path></svg></span> <span class="button__span">Next step</span></button></div></div></div>
+        <div class="tickets-summary__box tickets-summary__box--expanded" id='openCard' style='display: none;'><div class="tickets-summary__basket" id="tickets-summary-basket"><h5 id="nameGet">National Museum of Qatar Plus Special Exhibitions</h5><div id="data_item_div"></div></div><div class="tickets-summary__total-amount tickets-summary__total-amount--desktop"></div><div class="tickets-summary__content tickets-summary__content--desktop"></div><div class="tickets-summary__footer"><div class="tickets-summary__total"><div class="tickets-summary__total-content"><a class="tickets-summary__view-order" href="?">View order</a><div class="tickets-summary__total-amount tickets-summary__total-amount--mobile"></div></div><button onclick="NextStepThree()" class="button button--primary tickets-summary__button" type="submit"><span class="button__icon button__icon--before"><svg data-direction="text-direction" height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="m17 10-.9.9 3.5 3.5H9v1.2h10.6l-3.5 3.5.9.9 5-5z"></path></svg></span> <span class="button__span">Next step</span></button></div></div></div>
           
         
         <div
@@ -1040,14 +1048,14 @@
               <h4 id="nameGet"></h4>
             </div>
             <div
-            id="total_price_text"
+            id="data_item_div"
               class="tickets-summary__content tickets-summary__content--desktop"
             >
             </div>
             <div
             class="tickets-summary__total-amount tickets-summary__total-amount--desktop"
           >
-            <h4 id="totalprice"></h4>
+            <h4 id="data_amout"></h4>
           </div>
             <div class="tickets-summary__footer">
               <div class="open_Div" style="display: none">
@@ -1062,11 +1070,12 @@
                   document.querySelector('#view_open').style='display: block'
                   document.querySelector('#view_close').style='display: none'">View order</div>
                   <div
+                  id="data_amout"
                     class="tickets-summary__total-amount tickets-summary__total-amount--mobile"
                   ></div>
                 </div>
                 <div
-                  onclick="NextStepTwo()"
+                  onclick="NextStepThree()"
                   class="button button--primary tickets-summary__button"
                   >
                   <span  class="button__icon button__icon--before"
