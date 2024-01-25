@@ -1,3 +1,5 @@
+localStorage.setItem('name', 'NATIONAL MUSEUM OF QATAR PLUS SPECIAL EXHIBITIONS')
+
 var nameGet = localStorage.getItem('name')
 if (nameGet) {
     for (let i = 0; i < document.querySelectorAll('#nameGet').length; i++) {
