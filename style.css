@@ -1,5 +1,19 @@
-* {
+/* * {
     font-family: 'AR One Sans', sans-serif !important;
+} */
+
+* p {
+    /* font-family: 'AR One Sans', sans-serif !important; */
+
+    font-family: 'AR One Sans', sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+* h1, h2, span {
+    /* font-family: 'AR One Sans', sans-serif !important; */
+    /* font-family: 'Lato', sans-serif !important; */
+    letter-spacing: 2px !important; 
+    font-weight: 200 !important;
 }
 
 @media(max-width: 800px) {
@@ -59,6 +73,7 @@ body.subsite--nmoq .menu-bar .logo {
 body.subsite--nmoq .menu-bar .menu-bar__buttons {
     margin-right: 10px !important;
 }
+
 #tickets-summary-basket {
     /* background: #000; */
     height: auto;
