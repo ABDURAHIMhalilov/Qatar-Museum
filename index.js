@@ -494,17 +494,22 @@ setTimeout(()=>{
 },1000)
 
 
-$(document).ready(function () {
+$(document).ready(function() {
+  var today = new Date();
+  var oneMonthLater = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
 
   $('#datepicker').datepicker({
+    minDate: today,
+    maxDate: oneMonthLater,
     onSelect: function(dateText, inst) {
       var selectedDate = new Date(dateText);
-      DataTime(selectedDate.getDay(),selectedDate)
-      // console.log(selectedDate.getDay(),"hello");
+      // Tanlangan kunni olish uchun
+      var selectedDay = selectedDate.getDay();
+      // Boshqa ishlar bilan tanlangan kun va sana bilan ishlash
+      DataTime(selectedDay, selectedDate);
       $('#selected-date').text(selectedDate.toDateString());
     }
   });
-  
 });
 
 
