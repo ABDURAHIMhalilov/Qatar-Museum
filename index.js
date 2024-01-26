@@ -696,7 +696,11 @@ function NextStepThree(){
   }
 }
 
-
+function NextStepFour(){
+  if(document.querySelector("#payment-methods-creditcard-").checked){
+    window.location="/securitypayment.html"
+  }
+}
 
 
 
