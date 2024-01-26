@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        text-decoration: none;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+    body {
+        padding: 10px;
+    }
+    .head {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        margin-top: 5%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+
+    .text_div {
+        margin-left: 10px;
+    }
+
+    .select_div {
+        display: flex;
+        width: 20%;
+        justify-content: space-between;
+        max-width: 400px;
+    }
+    .select_div select {
+        width: 100%;
+    }
+
+    .min_selc p{
+        font-weight: 600;
+    }
+
+    .min_selc p span{
+        color: red;
+    }
+
+    .secur_div {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        margin-top: 20px;
+        background: #fafafa;
+        padding: 1rem;
+        border-radius: 10px;
+        -webkit-box-shadow: 4px 4px 23px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 4px 4px 23px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 4px 4px 23px 0px rgba(34, 60, 80, 0.2);
+    }
+
+    .form1 p {
+        color: black;
+        font-weight: 700;
+    }
+
+    .form1 p span {
+        color: red;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .form1 input {
+        width: 100%;
+        max-width: 400px;
+        height: 40px;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        padding-left: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .min_selc select {
+        display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    .Selet2 p {
+        color: black;
+        font-weight: 700;
+    }
+
+    .Selet2 p span {
+        color: red;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .Selet2 input {
+        width: 100%;
+        max-width: 600px;
+        height: 40px;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        padding-left: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    .gfu {
+        width:35%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .p_img {
+        display: flex;
+    }
+
+    .Select3 p{
+        font-weight: 600;
+    }
+
+    .Select3 p span{
+        color: red;
+    }
+
+    .gfu input{
+        width: 100%;
+        max-width: 100px;
+        height: 40px;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        padding-left: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .p_img img {
+        margin-right: 5px;
+    }
+
+    /* @media(max-width: 1215px) {
+        .secur_div{
+            margin: 5px;
+        }
+    } */
+
+    @media(max-width: 1065px) {
+        .select_div {
+            width: 25%;
+        }
+        .gfu {
+            width: 40%;
+        }
+    }
+
+    @media(max-width: 837px) {
+        .select_div{
+            width: 30%;
+        }
+        .gfu{
+            width: 45%;
+        }
+    }
+    @media(max-width: 800px) {
+        .gfu{
+            width: 50%;
+        }
+    }
+    @media(max-width: 710px) {
+        .gfu{
+            width: 55%;
+        }
+        .select_div{
+            width: 35%;
+        }
+    }
+    @media(max-width: 660px) {
+        .gfu{
+            width: 60%;
+        }
+        .select_div {
+            width: 40%;
+        }
+    }
+    @media(max-width: 610px){
+        .gfu{
+            width: 65%;
+        }
+        .select_div {
+            width: 45%;
+        }
+    }
+    @media(max-width: 560px){
+        .gfu{
+            width: 75%;
+        }
+        .select_div {
+            width: 50%;
+        }
+    }
+    @media(max-width: 483px){
+        .gfu{
+            width: 85%;
+        }
+        .select_div {
+            width: 60%;
+        }
+    }
+    @media(max-width: 430px){
+        .gfu{
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .gfu input {
+            max-width: 100%;
+            width: 100%;
+        }
+        .select_div {
+            width: 100%;
+        }
+    }
+    @media(max-width: 374px) {
+        
+    .head img{
+        width: 100%;
+    }
+    }
+</style>
+
+<body>
+    
+    <div class="head">
+        <img src="./Снимок экрана 2024-01-26 142824.png" alt="">
+        <div class="text_div">
+            <h1>Qatar Museums</h1>
+            <p>Secure payment</p>
+        </div>
+    </div>
+    <div class="secur_div">
+        <div class="form1">
+            <p>Card number <span>*</span></p>
+            <input type="number">
+        </div>
+        <div class="Images">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+        <div class="select_div">
+            <div class="min_selc">
+                <p>Expiry month <span>*</span></p>
+                <select>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                </select>
+            </div>
+            
+            <div class="min_selc">
+                <p> Expiry year <span>*</span></p>
+                <select>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                </select>
+            </div>
+        </div>
+        <div class="Selet2">
+            <p>Cardholder name <span>*</span></p>
+            <input type="text">
+        </div>
+        <div class="Select3">
+            <p>Security code <span>*</span></p>
+            <div class="gfu">
+                <input type="text">
+                <div class="p_img">
+                    <img src="./Снимок экрана 2024-01-26 141713.png" alt="">
+                    <p>3 digits on back of your card</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
