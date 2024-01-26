@@ -41,6 +41,9 @@
 .form_addres label p{
     font-weight: 800;
 }
+.form_addres div p{
+    font-weight: 800;
+}
 .form_addres label input{
     outline: none;
     display: block;
@@ -58,10 +61,9 @@
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.form_addres label select{
+.form_addres div select{
     outline: none;
     display: block;
-    width: 600px;
     max-width: 100%;
     height: calc(1.5em + 0.75rem + 2px);
     padding-left: 10px;
@@ -85,6 +87,12 @@
 .form_addres div{
     width: 600px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form_addres div div{
+    width: 600px;
+    display: block;
     align-items: center;
     justify-content: space-between;
 }
