@@ -594,7 +594,7 @@ function DataTime(date,vaqt){
   sessionStorage.setItem("date",vaqt)
   document.querySelector("#data_time_div").innerHTML=""
   if(date==5){
-    const Filter=datatime.filter(item=>item.timedate=="01/25/2024")
+    const Filter=datatime.filter(item=>item.time > hours)
     Filter.map((item,key)=>{
       document.querySelector("#data_time_big_div").style="display:block"
       document.querySelector("#data_time_div").innerHTML+=` <li onclick='OrqaFon(${key},"${vaqt}","${item.time}")' class="tickets-datetime-picker__time-item">
