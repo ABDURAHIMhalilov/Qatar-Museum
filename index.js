@@ -294,7 +294,6 @@ var data=[
   },
 ]
 
-
 setTimeout(() => {
   const Filter=data.filter(item=>item.category==1)
   Filter.map((item,key)=>{
@@ -512,106 +511,115 @@ $(document).ready(function() {
   });
 });
 
+const now = new Date();
+const hours = now.getHours();
+
 
 var datatime=[
   {
-    time:"9.00am",
+    time:9,
     timedate:"01/01/2024"
   },
   {
-    time:"10.00am",
+    time:10,
     timedate:"01/01/2024"
   },
   {
-    time:"11.00am",
+    time:11,
     timedate:"01/01/2024"
   },
   {
-    time:"12.00pm",
+    time:12,
     timedate:"01/01/2024"
   },
   {
-    time:"1.00pm",
+    time:13,
     timedate:"01/01/2024"
   },
   {
-    time:"2.00pm",
+    time:14,
     timedate:"01/01/2024"
   },
   {
-    time:"3.00pm",
+    time:15,
     timedate:"01/01/2024"
   },
   {
-    time:"4.00pm",
+    time:16,
     timedate:"01/01/2024"
   },
   {
-    time:"5.00pm",
+    time:17,
     timedate:"01/01/2024"
   },
   {
-    time:"6.00pm",
+    time:18,
     timedate:"01/01/2024"
   },
   {
-    time:"1.30pm",
+    time:1.30,
     timedate:"01/26/2024"
   },
   {
-    time:"2.00pm",
+    time:2,
     timedate:"01/26/2024"
   },
   {
-    time:"3.00pm",
+    time:3,
     timedate:"01/26/2024"
   },
   {
-    time:"4.00pm",
+    time:4,
     timedate:"01/26/2024"
   },
   {
-    time:"5.00pm",
+    time:5,
     timedate:"01/26/2024"
   },
   {
-    time:"6.00pm",
+    time:6,
     timedate:"01/26/2024"
   },
 ]
 
+var dataData = []
+// var asd = datatime.map(item => dataData=item)
+
+
+
 var dateEshik=false
 
 function DataTime(date,vaqt){
-  console.log(date,"hello");
   dateEshik=true
   sessionStorage.setItem("date",vaqt)
   document.querySelector("#data_time_div").innerHTML=""
   if(date==5){
-    const Filter=datatime.filter(item=>item.timedate=="01/26/2024")
+    const Filter=datatime.filter(item=>item.timedate=="01/25/2024")
     Filter.map((item,key)=>{
       document.querySelector("#data_time_big_div").style="display:block"
       document.querySelector("#data_time_div").innerHTML+=` <li onclick='OrqaFon(${key},"${vaqt}","${item.time}")' class="tickets-datetime-picker__time-item">
       <label
         id="data_time_soat"
         class="tickets-datetime-picker__time-item-label"
-        >${item.time}</label
+        >${item.time}.00pm</label
       >
     </li>`
     })
+    console.log(item.time);
     
   }
   if(date!=5){
-    const Filter=datatime.filter(item=>item.timedate=="01/01/2024")
+    const Filter=datatime.filter(item=>item.time > hours)
     Filter.map((item,key)=>{
       document.querySelector("#data_time_big_div").style="display:block"
       document.querySelector("#data_time_div").innerHTML+=` <li onclick='OrqaFon(${key},"${vaqt}","${item.time}")' class="tickets-datetime-picker__time-item">
       <label
         id="data_time_soat"
         class="tickets-datetime-picker__time-item-label"
-        >${item.time}</label
+        >${item.time}.00am</label
       >
     </li>`
+
     })
   }
 }

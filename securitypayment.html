@@ -1,659 +1,702 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<style>
+  <style>
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        outline: none;
-        text-decoration: none;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      text-decoration: none;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     }
 
     body {
-        padding: 10px;
+      padding: 10px;
     }
 
     .head {
-        width: 100%;
-        max-width: 1200px;
-        margin: auto;
-        margin-top: 5%;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      margin-top: 5%;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-
     .text_div {
-        margin-left: 10px;
+      margin-left: 10px;
     }
 
     .select_div {
-        display: flex;
-        width: 20%;
-        justify-content: space-between;
-        max-width: 400px;
+      display: flex;
+      width: 20%;
+      justify-content: space-between;
+      max-width: 400px;
     }
 
     .select_div select {
-        width: 100%;
+      width: 100%;
     }
 
     .min_selc p {
-        font-weight: 600;
+      font-weight: 600;
     }
 
     .min_selc p span {
-        color: red;
+      color: red;
     }
 
     .secur_div {
-        width: 100%;
-        max-width: 1200px;
-        margin: auto;
-        margin-top: 20px;
-        background: #fafafa;
-        padding: 1rem;
-        border-radius: 10px;
-        -webkit-box-shadow: 4px 4px 23px 0px rgba(34, 60, 80, 0.2);
-        -moz-box-shadow: 4px 4px 23px 0px rgba(34, 60, 80, 0.2);
-        box-shadow: 4px 4px 23px 0px rgba(34, 60, 80, 0.2);
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      margin-top: 20px;
+      background: #fafafa;
+      padding: 1rem;
+      border-radius: 10px;
+      -webkit-box-shadow: 4px 4px 23px 0px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: 4px 4px 23px 0px rgba(34, 60, 80, 0.2);
+      box-shadow: 4px 4px 23px 0px rgba(34, 60, 80, 0.2);
     }
 
     .form1 p {
-        color: black;
-        font-weight: 700;
+      color: black;
+      font-weight: 700;
     }
 
     .form1 p span {
-        color: red;
-        font-size: 15px;
-        font-weight: 400;
+      color: red;
+      font-size: 15px;
+      font-weight: 400;
     }
 
     .form1 input {
-        width: 100%;
-        max-width: 400px;
-        height: 40px;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        padding-left: 0.5rem;
-        margin-top: 0.5rem;
+      width: 100%;
+      max-width: 400px;
+      height: 40px;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      padding-left: 0.5rem;
+      margin-top: 0.5rem;
     }
 
     .min_selc select {
-        display: block;
-        width: 100%;
-        height: calc(1.5em + 0.75rem + 2px);
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        color: #495057;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      display: block;
+      width: 100%;
+      height: calc(1.5em + 0.75rem + 2px);
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
 
     .Selet2 p {
-        color: black;
-        font-weight: 700;
+      color: black;
+      font-weight: 700;
     }
 
     .Selet2 p span {
-        color: red;
-        font-size: 15px;
-        font-weight: 400;
+      color: red;
+      font-size: 15px;
+      font-weight: 400;
     }
 
     .Selet2 input {
-        width: 100%;
-        max-width: 600px;
-        height: 40px;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        padding-left: 0.5rem;
-        margin-top: 0.5rem;
+      width: 100%;
+      max-width: 600px;
+      height: 40px;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      padding-left: 0.5rem;
+      margin-top: 0.5rem;
     }
 
     .gfu {
-        width: 35%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      width: 35%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .p_img {
-        display: flex;
+      display: flex;
     }
 
     .Select3 p {
-        font-weight: 600;
+      font-weight: 600;
     }
 
     .Select3 p span {
-        color: red;
+      color: red;
     }
 
     .gfu input {
-        width: 100%;
-        max-width: 100px;
-        height: 40px;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        padding-left: 0.5rem;
-        margin-top: 0.5rem;
+      width: 100%;
+      max-width: 100px;
+      height: 40px;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      padding-left: 0.5rem;
+      margin-top: 0.5rem;
     }
 
     .p_img img {
-        margin-right: 5px;
+      margin-right: 5px;
     }
 
     .inp_div input {
-        width: 100%;
-        max-width: 600px;
-        height: 40px;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        padding-left: 0.5rem;
-        margin-top: 0.5rem;
+      width: 100%;
+      max-width: 600px;
+      height: 40px;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      padding-left: 0.5rem;
+      margin-top: 0.5rem;
     }
 
     .inp_div p {
-        font-weight: 600;
+      font-weight: 600;
     }
 
     .form_div_2 {
-        max-width: 600px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
+      max-width: 600px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
     }
 
     .form_mini {
-        max-width: 250px;
-        width: 100%;
+      max-width: 250px;
+      width: 100%;
     }
 
     .form_mini p {
-        font-weight: 600;
+      font-weight: 600;
     }
 
     .form_mini input,
     select {
+      width: 100%;
+      height: 40px;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      padding-left: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 555px) {
+      .form_div_2 {
+        flex-wrap: wrap;
+      }
+
+      .form_mini {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 1065px) {
+      .select_div {
+        width: 25%;
+      }
+
+      .gfu {
+        width: 40%;
+      }
+    }
+
+    @media (max-width: 837px) {
+      .select_div {
+        width: 30%;
+      }
+
+      .gfu {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .gfu {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: 710px) {
+      .gfu {
+        width: 55%;
+      }
+
+      .select_div {
+        width: 35%;
+      }
+    }
+
+    @media (max-width: 660px) {
+      .gfu {
+        width: 60%;
+      }
+
+      .select_div {
+        width: 40%;
+      }
+    }
+
+    @media (max-width: 610px) {
+      .gfu {
+        width: 65%;
+      }
+
+      .select_div {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .gfu {
+        width: 75%;
+      }
+
+      .select_div {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: 483px) {
+      .gfu {
+        width: 85%;
+      }
+
+      .select_div {
+        width: 60%;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .gfu {
         width: 100%;
-        height: 40px;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        padding-left: 0.5rem;
-        margin-top: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .gfu input {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .select_div {
+        width: 100%;
+      }
     }
 
-    @media(max-width: 555px) {
-        .form_div_2 {
-            flex-wrap: wrap;
-        }
-
-        .form_mini {
-            max-width: 100%;
-        }
-    }
-
-    @media(max-width: 1065px) {
-        .select_div {
-            width: 25%;
-        }
-
-        .gfu {
-            width: 40%;
-        }
-    }
-
-    @media(max-width: 837px) {
-        .select_div {
-            width: 30%;
-        }
-
-        .gfu {
-            width: 45%;
-        }
-    }
-
-    @media(max-width: 800px) {
-        .gfu {
-            width: 50%;
-        }
-    }
-
-    @media(max-width: 710px) {
-        .gfu {
-            width: 55%;
-        }
-
-        .select_div {
-            width: 35%;
-        }
-    }
-
-    @media(max-width: 660px) {
-        .gfu {
-            width: 60%;
-        }
-
-        .select_div {
-            width: 40%;
-        }
-    }
-
-    @media(max-width: 610px) {
-        .gfu {
-            width: 65%;
-        }
-
-        .select_div {
-            width: 45%;
-        }
-    }
-
-    @media(max-width: 560px) {
-        .gfu {
-            width: 75%;
-        }
-
-        .select_div {
-            width: 50%;
-        }
-    }
-
-    @media(max-width: 483px) {
-        .gfu {
-            width: 85%;
-        }
-
-        .select_div {
-            width: 60%;
-        }
-    }
-
-    @media(max-width: 430px) {
-        .gfu {
-            width: 100%;
-            flex-wrap: wrap;
-        }
-
-        .gfu input {
-            max-width: 100%;
-            width: 100%;
-        }
-
-        .select_div {
-            width: 100%;
-        }
-    }
-
-    @media(max-width: 374px) {
-
-        .head img {
-            width: 100%;
-        }
+    @media (max-width: 374px) {
+      .head img {
+        width: 100%;
+      }
     }
 
     .text_left_div {
-        display: flex;
-        align-items: end;
+      display: flex;
+      align-items: end;
     }
+
     .big_text_div {
-        width: 100%;
-        display: flex;
-        justify-content: end;
-        margin-top: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      margin-top: 10px;
     }
-</style>
 
-<body>
+    .btn_div {
+      display: flex;
+    }
+  </style>
 
+  <body>
     <div class="head">
-        <img src="./Снимок экрана 2024-01-26 142824.png" alt="">
-        <div class="text_div">
-            <h1>Qatar Museums</h1>
-            <p>Secure payment</p>
-        </div>
+      <img src="./Снимок экрана 2024-01-26 142824.png" alt="" />
+      <div class="text_div">
+        <h1>Qatar Museums</h1>
+        <p>Secure payment</p>
+      </div>
     </div>
     <div class="secur_div">
-        <div class="form1">
-            <p>Card number <span>*</span></p>
-            <input type="number">
-        </div>
-        <div class="Images">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-        </div>
-        <div class="select_div">
-            <div class="min_selc">
-                <p>Expiry month <span>*</span></p>
-                <select>
-                    <option>01</option>
-                    <option>02</option>
-                    <option>03</option>
-                    <option>04</option>
-                    <option>05</option>
-                </select>
-            </div>
-
-            <div class="min_selc">
-                <p> Expiry year <span>*</span></p>
-                <select>
-                    <option>23</option>
-                    <option>24</option>
-                    <option>25</option>
-                    <option>26</option>
-                    <option>27</option>
-                </select>
-            </div>
-        </div>
-        <div class="Selet2">
-            <p>Cardholder name <span>*</span></p>
-            <input type="text">
-        </div>
-        <div class="Select3">
-            <p>Security code <span>*</span></p>
-            <div class="gfu">
-                <input type="text">
-                <div class="p_img">
-                    <img src="./Снимок экрана 2024-01-26 141713.png" alt="">
-                    <p>3 digits on back of your card</p>
-                </div>
-            </div>
+      <div class="form1">
+        <p>Card number <span>*</span></p>
+        <input type="number" />
+      </div>
+      <div class="Images">
+        <img src="" alt="" />
+        <img src="" alt="" />
+        <img src="" alt="" />
+      </div>
+      <div class="select_div">
+        <div class="min_selc">
+          <p>Expiry month <span>*</span></p>
+          <select>
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+            <option>05</option>
+          </select>
         </div>
 
-    </div>
-
-    <div class="secur_div">
-        <h1>Billing address</h1>
-        <div class="inp_div">
-            <p>Street 1</p>
-            <input type="text">
+        <div class="min_selc">
+          <p>Expiry year <span>*</span></p>
+          <select>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+          </select>
         </div>
-        <div class="inp_div">
-            <p>Street 2</p>
-            <input type="text">
+      </div>
+      <div class="Selet2">
+        <p>Cardholder name <span>*</span></p>
+        <input type="text" />
+      </div>
+      <div class="Select3">
+        <p>Security code <span>*</span></p>
+        <div class="gfu">
+          <input type="text" />
+          <div class="p_img">
+            <img src="./Снимок экрана 2024-01-26 141713.png" alt="" />
+            <p>3 digits on back of your card</p>
+          </div>
         </div>
-        <div class="form_div_2">
-            <div class="form_mini">
-                <p>City</p>
-                <input type="text">
-            </div>
-            <div class="form_mini">
-                <p>State / Province</p>
-                <input type="text">
-            </div>
-        </div>
-
-        <div class="form_div_2">
-            <div class="form_mini">
-                <p>Postcode / ZIP Code</p>
-                <input type="text">
-            </div>
-            <div class="form_mini">
-                <p>Country</p>
-                <select>
-                    <option> Afghanistan</option>
-                    <option> Albania</option>
-                    <option> Algeria</option>
-                    <option> Andorra</option>
-                    <option> Angola</option>
-                    <option> Antigua and Barbuda</option>
-                    <option> Argentina</option>
-                    <option> Armenia</option>
-                    <option> Australia</option>
-                    <option> Austria</option>
-                    <option> Austrian Empire*</option>
-                    <option> Azerbaijan</option>
-                    <option> Baden</option>
-                    <option> Bahamas, The</option>
-                    <option> Bahrain</option>
-                    <option> Bangladesh</option>
-                    <option> Barbados</option>
-                    <option> Bavaria</option>
-                    <option> Belarus</option>
-                    <option> Belgium</option>
-                    <option> Belize</option>
-                    <option> Benin (Dahomey)</option>
-                    <option> Bolivia</option>
-                    <option> Bosnia and Herzegovina</option>
-                    <option> Botswana</option>
-                    <option> Brazil</option>
-                    <option> Brunei</option>
-                    <option> Brunswick and Lüneburg</option>
-                    <option> Bulgaria</option>
-                    <option> Burkina Faso (Upper Volta)</option>
-                    <option> Burma</option>
-                    <option> Burundi</option>
-                    <option> Cabo Verde</option>
-                    <option> Cambodia</option>
-                    <option> Cameroon</option>
-                    <option> Canada</option>
-                    <option> Cayman Islands, The</option>
-                    <option> Central African Republic</option>
-                    <option> Central American Federation*</option>
-                    <option> Chad</option>
-                    <option> Chile</option>
-                    <option> China</option>
-                    <option> Colombia</option>
-                    <option> Comoros</option>
-                    <option> Congo Free State, The</option>
-                    <option> Costa Rica</option>
-                    <option> Cote d’Ivoire (Ivory Coast)</option>
-                    <option> Croatia</option>
-                    <option> Cuba</option>
-                    <option> Cyprus</option>
-                    <option> Czechia</option>
-                    <option> Czechoslovakia</option>
-                    <option> Democratic Republic of the Congo</option>
-                    <option> Denmark</option>
-                    <option> Djibouti</option>
-                    <option> Dominica</option>
-                    <option> Dominican Republic</option>
-                    <option> Duchy of Parma, The</option>
-                    <option> East Germany (German Democratic Republic)</option>
-                    <option> Ecuador</option>
-                    <option> Egypt</option>
-                    <option> El Salvador</option>
-                    <option> Equatorial Guinea</option>
-                    <option> Eritrea</option>
-                    <option> Estonia</option>
-                    <option> Eswatini</option>
-                    <option> Ethiopia</option>
-                    <option> Federal Government of Germany (1848-49)</option>
-                    <option> Fiji</option>
-                    <option> Finland</option>
-                    <option> France</option>
-                    <option> Gabon</option>
-                    <option> Gambia, The</option>
-                    <option> Georgia</option>
-                    <option> Germany</option>
-                    <option> Ghana</option>
-                    <option> Grand Duchy of Tuscany, The</option>
-                    <option> Greece</option>
-                    <option> Grenada</option>
-                    <option> Guatemala</option>
-                    <option> Guinea</option>
-                    <option> Guinea-Bissau</option>
-                    <option> Guyana</option>
-                    <option> Haiti</option>
-                    <option> Hanover</option>
-                    <option> Hanseatic Republics</option>
-                    <option> Hawaii</option>
-                    <option> Hesse</option>
-                    <option> Holy See</option>
-                    <option> Honduras</option>
-                    <option> Hungary</option>
-                    <option> Iceland</option>
-                    <option> India</option>
-                    <option> Indonesia</option>
-                    <option> Iran</option>
-                    <option> Iraq</option>
-                    <option> Ireland</option>
-                    <option> Israel</option>
-                    <option> Italy</option>
-                    <option> Jamaica</option>
-                    <option> Japan</option>
-                    <option> Jordan</option>
-                    <option> Kazakhstan</option>
-                    <option> Kenya</option>
-                    <option> Kingdom of Serbia/Yugoslavia*</option>
-                    <option> Kiribati</option>
-                    <option> Korea</option>
-                    <option> Kosovo</option>
-                    <option> Kuwait</option>
-                    <option> Kyrgyzstan</option>
-                    <option> Laos</option>
-                    <option> Latvia</option>
-                    <option> Lebanon</option>
-                    <option> Lesotho</option>
-                    <option> Lew Chew (Loochoo)*</option>
-                    <option> Liberia</option>
-                    <option> Libya</option>
-                    <option> Liechtenstein</option>
-                    <option> Lithuania</option>
-                    <option> Luxembourg</option>
-                    <option> Madagascar</option>
-                    <option> Malawi</option>
-                    <option> Malaysia</option>
-                    <option> Maldives</option>
-                    <option> Mali</option>
-                    <option> Malta</option>
-                    <option> Marshall Islands</option>
-                    <option> Mauritania</option>
-                    <option> Mauritius</option>
-                    <option> Mecklenburg-Schwerin*</option>
-                    <option> Mecklenburg-Strelitz*</option>
-                    <option> Mexico</option>
-                    <option> Micronesia</option>
-                    <option> Moldova</option>
-                    <option> Monaco</option>
-                    <option> Mongolia</option>
-                    <option> Montenegro</option>
-                    <option> Morocco</option>
-                    <option> Mozambique</option>
-                    <option> Namibia</option>
-                    <option> Nassau*</option>
-                    <option> Nauru</option>
-                    <option> Nepal</option>
-                    <option> Netherlands, The</option>
-                    <option> New Zealand</option>
-                    <option> Nicaragua</option>
-                    <option> Niger</option>
-                    <option> Nigeria</option>
-                    <option> North German Confederation*</option>
-                    <option> North German Union*</option>
-                    <option> North Macedonia</option>
-                    <option> Norway</option>
-                    <option> Oldenburg*</option>
-                    <option> Oman</option>
-                    <option> Orange Free State*</option>
-                    <option> Pakistan</option>
-                    <option> Palau</option>
-                    <option> Panama</option>
-                    <option> Papal States*</option>
-                    <option> Papua New Guinea</option>
-                    <option> Paraguay</option>
-                    <option> Peru</option>
-                    <option> Philippines</option>
-                    <option> Piedmont-Sardinia*</option>
-                    <option> Poland</option>
-                    <option> Portugal</option>
-                    <option> Qatar</option>
-                    <option> Republic of Genoa*</option>
-                    <option> Republic of Korea (South Korea)</option>
-                    <option> Republic of the Congo</option>
-                    <option> Romania</option>
-                    <option> Russia</option>
-                    <option> Rwanda</option>
-                    <option> Saint Kitts and Nevis</option>
-                    <option> Saint Lucia</option>
-                    <option> Saint Vincent and the Grenadines</option>
-                    <option> Samoa</option>
-                    <option> San Marino</option>
-                    <option> Sao Tome and Principe</option>
-                    <option> Saudi Arabia</option>
-                    <option> Schaumburg-Lippe*</option>
-                    <option> Senegal</option>
-                    <option> Serbia</option>
-                    <option> Seychelles</option>
-                    <option> Sierra Leone</option>
-                    <option> Singapore</option>
-                    <option> Slovakia</option>
-                    <option> Slovenia</option>
-                    <option> Solomon Islands, The</option>
-                    <option> Somalia</option>
-                    <option> South Africa</option>
-                    <option> South Sudan</option>
-                    <option> Spain</option>
-                    <option> Sri Lanka</option>
-                    <option> Sudan</option>
-                    <option> Suriname</option>
-                    <option> Sweden</option>
-                    <option> Switzerland</option>
-                    <option> Syria</option>
-                    <option> Tajikistan</option>
-                    <option> Tanzania</option>
-                    <option> Texas*</option>
-                    <option> Thailand</option>
-                    <option> Timor-Leste</option>
-                    <option> Togo</option>
-                    <option> Tonga</option>
-                    <option> Trinidad and Tobago</option>
-                    <option> Tunisia</option>
-                    <option> Turkey</option>
-                    <option> Turkmenistan</option>
-                    <option> Tuvalu</option>
-                    <option> Two Sicilies</option>
-                    <option> Uganda</option>
-                    <option> Ukraine</option>
-                    <option> Union of Soviet Socialist Republics*</option>
-                    <option> United Arab Emirates, The</option>
-                    <option> United Kingdom, The</option>
-                    <option> Uruguay</option>
-                    <option> Uzbekistan</option>
-                    <option> Vanuatu</option>
-                    <option> Venezuela</option>
-                    <option> Vietnam</option>
-                    <option> Württemberg*</option>
-                    <option> Yemen</option>
-                    <option> Zambia</option>
-                    <option> Zimbabwe</option>
-
-                </select>
-            </div>
-        </div>
+      </div>
     </div>
 
     <div class="secur_div">
-        <h1>Order details</h1>
-        <p>Ordered goods</p>
-        <div class="big_text_div">
-            <div class="text_left_div">
-                <h1>Total</h1>
-                <h2>&nbsp;QAR: 50,00</h2>
-            </div>
+      <h1>Billing address</h1>
+      <div class="inp_div">
+        <p>Street 1</p>
+        <input type="text" />
+      </div>
+      <div class="inp_div">
+        <p>Street 2</p>
+        <input type="text" />
+      </div>
+      <div class="form_div_2">
+        <div class="form_mini">
+          <p>City</p>
+          <input type="text" />
         </div>
+        <div class="form_mini">
+          <p>State / Province</p>
+          <input type="text" />
+        </div>
+      </div>
+
+      <div class="form_div_2">
+        <div class="form_mini">
+          <p>Postcode / ZIP Code</p>
+          <input type="text" />
+        </div>
+        <div class="form_mini">
+          <p>Country</p>
+          <select>
+            <option>Afghanistan</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+            <option>Andorra</option>
+            <option>Angola</option>
+            <option>Antigua and Barbuda</option>
+            <option>Argentina</option>
+            <option>Armenia</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Austrian Empire*</option>
+            <option>Azerbaijan</option>
+            <option>Baden</option>
+            <option>Bahamas, The</option>
+            <option>Bahrain</option>
+            <option>Bangladesh</option>
+            <option>Barbados</option>
+            <option>Bavaria</option>
+            <option>Belarus</option>
+            <option>Belgium</option>
+            <option>Belize</option>
+            <option>Benin (Dahomey)</option>
+            <option>Bolivia</option>
+            <option>Bosnia and Herzegovina</option>
+            <option>Botswana</option>
+            <option>Brazil</option>
+            <option>Brunei</option>
+            <option>Brunswick and Lüneburg</option>
+            <option>Bulgaria</option>
+            <option>Burkina Faso (Upper Volta)</option>
+            <option>Burma</option>
+            <option>Burundi</option>
+            <option>Cabo Verde</option>
+            <option>Cambodia</option>
+            <option>Cameroon</option>
+            <option>Canada</option>
+            <option>Cayman Islands, The</option>
+            <option>Central African Republic</option>
+            <option>Central American Federation*</option>
+            <option>Chad</option>
+            <option>Chile</option>
+            <option>China</option>
+            <option>Colombia</option>
+            <option>Comoros</option>
+            <option>Congo Free State, The</option>
+            <option>Costa Rica</option>
+            <option>Cote d’Ivoire (Ivory Coast)</option>
+            <option>Croatia</option>
+            <option>Cuba</option>
+            <option>Cyprus</option>
+            <option>Czechia</option>
+            <option>Czechoslovakia</option>
+            <option>Democratic Republic of the Congo</option>
+            <option>Denmark</option>
+            <option>Djibouti</option>
+            <option>Dominica</option>
+            <option>Dominican Republic</option>
+            <option>Duchy of Parma, The</option>
+            <option>East Germany (German Democratic Republic)</option>
+            <option>Ecuador</option>
+            <option>Egypt</option>
+            <option>El Salvador</option>
+            <option>Equatorial Guinea</option>
+            <option>Eritrea</option>
+            <option>Estonia</option>
+            <option>Eswatini</option>
+            <option>Ethiopia</option>
+            <option>Federal Government of Germany (1848-49)</option>
+            <option>Fiji</option>
+            <option>Finland</option>
+            <option>France</option>
+            <option>Gabon</option>
+            <option>Gambia, The</option>
+            <option>Georgia</option>
+            <option>Germany</option>
+            <option>Ghana</option>
+            <option>Grand Duchy of Tuscany, The</option>
+            <option>Greece</option>
+            <option>Grenada</option>
+            <option>Guatemala</option>
+            <option>Guinea</option>
+            <option>Guinea-Bissau</option>
+            <option>Guyana</option>
+            <option>Haiti</option>
+            <option>Hanover</option>
+            <option>Hanseatic Republics</option>
+            <option>Hawaii</option>
+            <option>Hesse</option>
+            <option>Holy See</option>
+            <option>Honduras</option>
+            <option>Hungary</option>
+            <option>Iceland</option>
+            <option>India</option>
+            <option>Indonesia</option>
+            <option>Iran</option>
+            <option>Iraq</option>
+            <option>Ireland</option>
+            <option>Israel</option>
+            <option>Italy</option>
+            <option>Jamaica</option>
+            <option>Japan</option>
+            <option>Jordan</option>
+            <option>Kazakhstan</option>
+            <option>Kenya</option>
+            <option>Kingdom of Serbia/Yugoslavia*</option>
+            <option>Kiribati</option>
+            <option>Korea</option>
+            <option>Kosovo</option>
+            <option>Kuwait</option>
+            <option>Kyrgyzstan</option>
+            <option>Laos</option>
+            <option>Latvia</option>
+            <option>Lebanon</option>
+            <option>Lesotho</option>
+            <option>Lew Chew (Loochoo)*</option>
+            <option>Liberia</option>
+            <option>Libya</option>
+            <option>Liechtenstein</option>
+            <option>Lithuania</option>
+            <option>Luxembourg</option>
+            <option>Madagascar</option>
+            <option>Malawi</option>
+            <option>Malaysia</option>
+            <option>Maldives</option>
+            <option>Mali</option>
+            <option>Malta</option>
+            <option>Marshall Islands</option>
+            <option>Mauritania</option>
+            <option>Mauritius</option>
+            <option>Mecklenburg-Schwerin*</option>
+            <option>Mecklenburg-Strelitz*</option>
+            <option>Mexico</option>
+            <option>Micronesia</option>
+            <option>Moldova</option>
+            <option>Monaco</option>
+            <option>Mongolia</option>
+            <option>Montenegro</option>
+            <option>Morocco</option>
+            <option>Mozambique</option>
+            <option>Namibia</option>
+            <option>Nassau*</option>
+            <option>Nauru</option>
+            <option>Nepal</option>
+            <option>Netherlands, The</option>
+            <option>New Zealand</option>
+            <option>Nicaragua</option>
+            <option>Niger</option>
+            <option>Nigeria</option>
+            <option>North German Confederation*</option>
+            <option>North German Union*</option>
+            <option>North Macedonia</option>
+            <option>Norway</option>
+            <option>Oldenburg*</option>
+            <option>Oman</option>
+            <option>Orange Free State*</option>
+            <option>Pakistan</option>
+            <option>Palau</option>
+            <option>Panama</option>
+            <option>Papal States*</option>
+            <option>Papua New Guinea</option>
+            <option>Paraguay</option>
+            <option>Peru</option>
+            <option>Philippines</option>
+            <option>Piedmont-Sardinia*</option>
+            <option>Poland</option>
+            <option>Portugal</option>
+            <option>Qatar</option>
+            <option>Republic of Genoa*</option>
+            <option>Republic of Korea (South Korea)</option>
+            <option>Republic of the Congo</option>
+            <option>Romania</option>
+            <option>Russia</option>
+            <option>Rwanda</option>
+            <option>Saint Kitts and Nevis</option>
+            <option>Saint Lucia</option>
+            <option>Saint Vincent and the Grenadines</option>
+            <option>Samoa</option>
+            <option>San Marino</option>
+            <option>Sao Tome and Principe</option>
+            <option>Saudi Arabia</option>
+            <option>Schaumburg-Lippe*</option>
+            <option>Senegal</option>
+            <option>Serbia</option>
+            <option>Seychelles</option>
+            <option>Sierra Leone</option>
+            <option>Singapore</option>
+            <option>Slovakia</option>
+            <option>Slovenia</option>
+            <option>Solomon Islands, The</option>
+            <option>Somalia</option>
+            <option>South Africa</option>
+            <option>South Sudan</option>
+            <option>Spain</option>
+            <option>Sri Lanka</option>
+            <option>Sudan</option>
+            <option>Suriname</option>
+            <option>Sweden</option>
+            <option>Switzerland</option>
+            <option>Syria</option>
+            <option>Tajikistan</option>
+            <option>Tanzania</option>
+            <option>Texas*</option>
+            <option>Thailand</option>
+            <option>Timor-Leste</option>
+            <option>Togo</option>
+            <option>Tonga</option>
+            <option>Trinidad and Tobago</option>
+            <option>Tunisia</option>
+            <option>Turkey</option>
+            <option>Turkmenistan</option>
+            <option>Tuvalu</option>
+            <option>Two Sicilies</option>
+            <option>Uganda</option>
+            <option>Ukraine</option>
+            <option>Union of Soviet Socialist Republics*</option>
+            <option>United Arab Emirates, The</option>
+            <option>United Kingdom, The</option>
+            <option>Uruguay</option>
+            <option>Uzbekistan</option>
+            <option>Vanuatu</option>
+            <option>Venezuela</option>
+            <option>Vietnam</option>
+            <option>Württemberg*</option>
+            <option>Yemen</option>
+            <option>Zambia</option>
+            <option>Zimbabwe</option>
+          </select>
+        </div>
+      </div>
     </div>
 
+    <div class="secur_div">
+      <h1>Order details</h1>
+      <p>Ordered goods</p>
+      <div class="big_text_div">
+        <div class="text_left_div">
+          <h1>Total</h1>
+          <h2 id="qar_number"></h2>
+        </div>
+      </div>
+    </div>
 
-<script src="./index.js"></script>
-</body>
+    <div class="secur_div" style="display: flex; justify-content: end">
+      <div class="asd">
+        <p>
+          The next screen you see may be payment card verification through your
+          card issuer.
+        </p>
+        <div
+          class="btn_div"
+          style="
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            margin-top: 10px;
+          "
+        >
+          <a
+            href="./payment.html"
+            style="margin-right: 10px; text-decoration: underline"
+            >Cancel</a
+          >
+          <button
+            style="
+              width: 120px;
+              background-color: green;
+              height: 40px;
+              border: none;
+              color: white;
+              font-size: 15px;
+              border-radius: 5px;
+              cursor: pointer;
+            "
+          >
+            Pay now
+          </button>
+        </div>
+      </div>
+    </div>
 
+    <script src="./index.js"></script>
+    <script>
+      setTimeout(() => {
+        document.querySelector("#qar_number").innerHTML =
+          "&nbsp;QAR:" + sessionStorage.getItem("dataprice");
+      }, 1000);
+    </script>
+  </body>
 </html>
