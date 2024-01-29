@@ -557,27 +557,27 @@ var datatime=[
     timedate:"01/01/2024"
   },
   {
-    time:1.30,
+    time:13,
     timedate:"01/26/2024"
   },
   {
-    time:2,
+    time:14,
     timedate:"01/26/2024"
   },
   {
-    time:3,
+    time:15,
     timedate:"01/26/2024"
   },
   {
-    time:4,
+    time:16,
     timedate:"01/26/2024"
   },
   {
-    time:5,
+    time:17,
     timedate:"01/26/2024"
   },
   {
-    time:6,
+    time:18,
     timedate:"01/26/2024"
   },
 ]
@@ -595,13 +595,15 @@ function DataTime(date,vaqt){
   document.querySelector("#data_time_div").innerHTML=""
   if(date==5){
     const Filter=datatime.filter(item=>item.time > hours)
-    Filter.map((item,key)=>{
+    datatime.map((item,key)=>{
       document.querySelector("#data_time_big_div").style="display:block"
       document.querySelector("#data_time_div").innerHTML+=` <li onclick='OrqaFon(${key},"${vaqt}","${item.time}")' class="tickets-datetime-picker__time-item">
       <label
         id="data_time_soat"
         class="tickets-datetime-picker__time-item-label"
-        >${item.time}.00pm</label
+        >${item.time}.00${
+          item.time > 12 ? 'am' : 'pm'
+        }</label
       >
     </li>`
     })
@@ -610,13 +612,15 @@ function DataTime(date,vaqt){
   }
   if(date!=5){
     const Filter=datatime.filter(item=>item.time > hours)
-    Filter.map((item,key)=>{
+    datatime.map((item,key)=>{
       document.querySelector("#data_time_big_div").style="display:block"
       document.querySelector("#data_time_div").innerHTML+=` <li onclick='OrqaFon(${key},"${vaqt}","${item.time}")' class="tickets-datetime-picker__time-item">
       <label
         id="data_time_soat"
         class="tickets-datetime-picker__time-item-label"
-        >${item.time}.00am</label
+        >${item.time}.00${
+          item.time > 12 ? 'am' : 'pm'
+        }</label
       >
     </li>`
 
@@ -626,6 +630,7 @@ function DataTime(date,vaqt){
 
 
 function OrqaFon(key,date,time){
+if(time>hours){
   for (let i = 0; i < document.querySelectorAll("#data_time_soat").length; i++) {
     if(i==key){
         document.querySelectorAll("#data_time_soat")[i].style="background: #464646;color:white;"
@@ -635,6 +640,7 @@ function OrqaFon(key,date,time){
   }
   sessionStorage.setItem("date",date)
   sessionStorage.setItem("datetime",time)
+}
 }
 
 
